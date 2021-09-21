@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="272dp"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:gravity="center"
+        android:textSize="13dp"
+        android:text="\'화장실 이용시간(Time Spent In Toilet)\' 은 \n\n다음을 상황을 위해 필요합니다."
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:text=" ❶ 노약자가 변기 위에서 실신하는 경우🚽\n\n ❷ 노약자가 욕조에서 실신하는 경우🛀\n\n ❸ 적은 확률로 노약자의 낙상을 감지하지 못했을 경우\n\n ❹  그 외 안전바가 감지하지 못하는 응급 상황이 \n\n  발생하는 경우"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="184dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/check" />
+</androidx.constraintlayout.widget.ConstraintLayout>
