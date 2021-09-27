@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_awsiot.xml" value="0.264" />
         <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_emergency.xml" value="0.2" />
         <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_guide_first.xml" value="0.264" />
         <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_login.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_menu.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_pushed_emergency_button.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_spent_time_in_toilet_more_than30.xml" value="0.264" />
       </map>
     </option>

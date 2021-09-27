@@ -19,17 +19,27 @@
         android:roundIcon="@mipmap/icon_goldentime_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProbonoApp">
-        <service android:name=".PersistentService"
+
+        <service
+            android:name=".PersistentService"
             android:enabled="true"
             android:exported="true"
-            android:stopWithTask="false"
-            />
-        <service android:name=".MyFirebaseMessagingService"
-                 android:exported="false">
+            android:stopWithTask="false" />
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+        <service
+            android:name=".MessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
         <activity android:name=".activity_emergency" />
         <activity android:name=".DeviceScanActivity" />
         <activity android:name=".DeviceControlActivity" />
