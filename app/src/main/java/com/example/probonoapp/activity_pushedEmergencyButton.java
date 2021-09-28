@@ -67,8 +67,7 @@ public class activity_pushedEmergencyButton extends AppCompatActivity {
         //어떤 응급상황인지 if-else문으로 구분해서 setText -> 응급신고 문자는 동일
         //응급호출 버튼을 눌렀을 때
         getoldNameTextView.setText("\""+oldName+"\"님의 안전이 우려됩니다.\n\n\""+oldName+"\"님이 응급호출 버튼을 누른 상태이니 안전을 확인해주세요.");
-        //음성으로 응급호출을 요청하였을 때
-        //getoldNameTextView.setText("\""+oldName+"\"님의 안전이 우려됩니다.\n\n\""+oldName+"\"님이 음성으로 도움을 요청하였으니, 안전을 확인해주세요.");
+        
         //낙상사고가 발생한 경우
         //getoldNameTextView.setText("\""+oldName+"\"님의 안전이 우려됩니다.\n\n\""+oldName+"\"님의 낙상사고가 감지되었으니, 안전을 확인해주세요.");
 
@@ -77,8 +76,11 @@ public class activity_pushedEmergencyButton extends AppCompatActivity {
         //전송할 문자 내용
         String sms = "[안전바 응급호출 도우미]\n\n" + "노약자 \""+oldName+"\"님에게 응급상황이 발생하였습니다. \n구조대 출동이 필요합니다.\n\n"+
                 "자택주소: "+OldLocate + "\n성별: "+OldGender + "\n생년월일: " +OldBirth+"\n보호자 전화번호: "+phonenumber;
-
-
+        
+        //메세지 전송 테스트
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(smsNumber,null, sms,null,null);
+        
         Button notEmergency = (Button)findViewById(R.id.buttonNotEmergency2); //응급상황이 아니라는 버튼을 눌렀을 때
         notEmergency.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,7 +89,7 @@ public class activity_pushedEmergencyButton extends AppCompatActivity {
             }
         });
         if (spentTime>5 && isAlarm){ //응급호출 버튼을 누른이후 5분 경과+응급상황이 아니라는 버튼을 누르지 않았을 때
-            SmsManager smsManager = SmsManager.getDefault();
+            SmsManager smsManager1 = SmsManager.getDefault();
             smsManager.sendTextMessage(smsNumber,null, sms,null,null);
             Toast.makeText(getApplicationContext(), "응급신고가 접수되었습니다!", Toast.LENGTH_LONG).show();
         }

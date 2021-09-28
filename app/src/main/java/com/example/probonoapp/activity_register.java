@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -63,7 +64,6 @@ public class activity_register extends AppCompatActivity {
         mETPhonenumber = (EditText)findViewById(R.id.et_phonenumber);
         mEtBirth = (EditText)findViewById(R.id.et_birth); //노약자 생년월일
         mBtnRegister = (Button)findViewById(R.id.btn_register);
-
 
 
 

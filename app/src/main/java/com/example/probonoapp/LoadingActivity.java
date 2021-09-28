@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class LoadingActivity extends AppCompatActivity {
 
     @Override
@@ -16,12 +19,18 @@ public class LoadingActivity extends AppCompatActivity {
     }
 
     private void startLoading() {
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+        Intent intent = new Intent(LoadingActivity.this, LoginActivity.class);
+        Intent intent2 = new Intent(LoadingActivity.this, activity_menu.class);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(LoadingActivity.this, LoginActivity.class);
-                startActivity(intent);
+                if (firebaseUser!=null) startActivity(intent2);
+                else startActivity(intent);
                 finish();
             }
         },2000);

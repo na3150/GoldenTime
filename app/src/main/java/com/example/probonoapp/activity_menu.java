@@ -1,17 +1,10 @@
 package com.example.probonoapp;
 
-import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -32,20 +25,15 @@ public class activity_menu extends AppCompatActivity {
     Button buttonble; ////블루투스 버튼
 
     private static final String TAG = "activity_menu";
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(activity_menu.this, LoginActivity.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);    //인텐트 플래그 설정
-        startActivity(intent);  //인텐트 이동
-        finish();   //현재 액티비티 종료
-    }
+    private BackKeyClickHandler backKeyClickHandler;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        backKeyClickHandler = new BackKeyClickHandler(this);
+
 
         Button logTokenButton = findViewById(R.id.msg_token_fmt);
         logTokenButton.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +65,7 @@ public class activity_menu extends AppCompatActivity {
         buttonLogout.setOnClickListener((new View.OnClickListener() { //로그아웃 버튼을 눌렀을 때
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_menu.this,MainActivity.class); //화면 이동
+                Intent intent = new Intent(activity_menu.this, LogoutActivity.class); //화면 이동
                 startActivity(intent);
                 finish(); // 현재 액티비티 파괴
             }
@@ -133,4 +121,9 @@ public class activity_menu extends AppCompatActivity {
             }
         });
     }
+    @Override public void onBackPressed() {
+        //super.onBackPressed();
+         backKeyClickHandler.onBackPressed();
+    }
+
 }

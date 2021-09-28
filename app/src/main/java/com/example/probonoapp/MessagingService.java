@@ -34,20 +34,13 @@ public class MessagingService extends FirebaseMessagingService {
             int notificationId = -1;
             Context mContext = getApplicationContext();
 
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, activity_pushedEmergencyButton.class); //푸시알림 눌렀을 때 이동하는 페이지
             intent.setAction(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
 
             String title = remoteMessage.getData().get("title");
             String message = remoteMessage.getData().get("body");
             String topic = remoteMessage.getFrom();
-
-            PendingIntent mPendingIntent = PendingIntent.getActivity(this,
-                    0, // 보통 default값 0을 삽입
-                    new Intent(getApplicationContext(),activity_pushedEmergencyButton.class),
-                    PendingIntent.FLAG_UPDATE_CURRENT
-            );
-
 
             NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "10001");
@@ -58,8 +51,7 @@ public class MessagingService extends FirebaseMessagingService {
                     .setAutoCancel(true)
                     .setDefaults(Notification.DEFAULT_SOUND)
                     .setContentTitle(title)
-                    .setContentText(message)
-                    .setContentIntent(mPendingIntent);
+                    .setContentText(message);
 
             if (topic.equals(topics[0])) {
                 notificationId = 0;
@@ -70,7 +62,8 @@ public class MessagingService extends FirebaseMessagingService {
             if (notificationId >= 0) {
                 PendingIntent pendingIntent = PendingIntent.getActivity(this, notificationId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
                 builder.setContentIntent(pendingIntent);
-                notificationManager.notify(notificationId, builder.build());
+                notificationManager.notify(notificationId, builder.build()); //알림 생성
+                //여기서부터 시간 측정? => 다른 activity변수 값 가져오는 방식으로
             }
 
         } catch (NullPointerException nullException) {
