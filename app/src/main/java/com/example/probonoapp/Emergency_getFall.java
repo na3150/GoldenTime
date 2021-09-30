@@ -80,7 +80,7 @@ public class Emergency_getFall extends AppCompatActivity {
         String sms = "[안전바 응급호출 도우미]\n\n" + "노약자 \""+oldName+"\"님에게 응급상황이 발생하였습니다. \n구조대 출동이 필요합니다.\n\n"+
                 "자택주소: "+OldLocate + "\n성별: "+OldGender + "\n생년월일: " +OldBirth+"\n보호자 전화번호: "+phonenumber;
         
-        //메세지 전송 테스트
+        //메세지 전송 테스트 => 현재 권한 문제가 좀 있음.
         //SmsManager smsManager = SmsManager.getDefault();
         //smsManager.sendTextMessage(smsNumber,null, sms,null,null);
         

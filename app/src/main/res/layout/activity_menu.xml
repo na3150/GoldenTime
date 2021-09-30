@@ -100,13 +100,27 @@
         tools:layout_editor_absoluteX="-16dp">
 
         <Button
+            android:id="@+id/msg_token_fmt"
+            android:layout_width="130dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button_background"
+            android:fontFamily="@font/gmarketsansttflight"
+            android:textColor="#000"
+            android:text="Token"
+            android:textSize="11dp"
+            app:backgroundTint="#F2DC99" />
+
+        <Button
             android:id="@+id/buttonLogout"
             android:layout_width="130dp"
             android:layout_height="35dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/button_background"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button_background"
             android:backgroundTint="#000"
             android:fontFamily="@font/gmarketsansttflight"
             android:text="LogOut"
@@ -122,16 +136,6 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/msg_token_fmt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="getToken"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.472"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
