@@ -110,16 +110,6 @@ public class activity_menu extends AppCompatActivity {
                 finish();
             }
         });
-
-        buttonble = (Button)findViewById(R.id.buttonBle); //블루투스 버튼을 눌렀을 때
-        buttonble.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent6 = new Intent(activity_menu.this, DeviceScanActivity.class);
-                startActivity(intent6);
-                finish();
-            }
-        });
     }
     @Override public void onBackPressed() {
         //super.onBackPressed();
