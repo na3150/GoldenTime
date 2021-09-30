@@ -11,8 +11,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -38,8 +38,6 @@
         </service>
 
         <activity android:name=".activity_emergency" />
-        <activity android:name=".DeviceScanActivity" />
-        <activity android:name=".DeviceControlActivity" />
         <activity android:name=".activity_alarmList" />
         <activity android:name=".activity_notInToilet" />
         <activity android:name=".activitiy_spentTimeIntoiletLessThan30" />
