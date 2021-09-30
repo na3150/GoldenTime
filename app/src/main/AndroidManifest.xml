@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:Android="http://schemas.android.com/apk/distribution"
     package="com.example.probonoapp">
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -11,8 +12,8 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
         android:allowBackup="true"
@@ -36,13 +37,18 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <activity android:name=".activity_emergency" />
+        <activity android:name=".Push_emergency_button" >
+            <intent-filter>
+                <action android:name="com.example.probonoApp_notification_action"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".activity_alarmList" />
+        <activity android:name=".Emergency_getFall">
+        </activity>
         <activity android:name=".activity_notInToilet" />
         <activity android:name=".activitiy_spentTimeIntoiletLessThan30" />
         <activity android:name=".activity_spentTimeInToiletMoreThan30" />
-        <activity android:name=".activity_pushedEmergencyButton" />
         <activity android:name=".activity_timespentintoilet" />
         <activity android:name=".activity_completealarm" />
         <activity android:name=".activity_signcomplete" />

@@ -9,7 +9,6 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 //노약자가 안전바의 응급호출 버튼을 눌렀을 때
-public class activity_pushedEmergencyButton extends AppCompatActivity {
+public class Emergency_getFall extends AppCompatActivity {
 
     //사용자 정보 가져오기위한 참조
     private FirebaseUser user;
@@ -40,8 +39,12 @@ public class activity_pushedEmergencyButton extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pushed_emergency_button);
+        setContentView(R.layout.activity_getfall);
 
+        /*
+         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+        */
 
         final TextView getoldNameTextView = (TextView)findViewById(R.id.et_notifyPushedEmergencyButton);
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -78,8 +81,8 @@ public class activity_pushedEmergencyButton extends AppCompatActivity {
                 "자택주소: "+OldLocate + "\n성별: "+OldGender + "\n생년월일: " +OldBirth+"\n보호자 전화번호: "+phonenumber;
         
         //메세지 전송 테스트
-        SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(smsNumber,null, sms,null,null);
+        //SmsManager smsManager = SmsManager.getDefault();
+        //smsManager.sendTextMessage(smsNumber,null, sms,null,null);
         
         Button notEmergency = (Button)findViewById(R.id.buttonNotEmergency2); //응급상황이 아니라는 버튼을 눌렀을 때
         notEmergency.setOnClickListener(new View.OnClickListener() {
@@ -89,8 +92,8 @@ public class activity_pushedEmergencyButton extends AppCompatActivity {
             }
         });
         if (spentTime>5 && isAlarm){ //응급호출 버튼을 누른이후 5분 경과+응급상황이 아니라는 버튼을 누르지 않았을 때
-            SmsManager smsManager1 = SmsManager.getDefault();
-            smsManager.sendTextMessage(smsNumber,null, sms,null,null);
+            //SmsManager smsManager1 = SmsManager.getDefault();
+           // smsManager.sendTextMessage(smsNumber,null, sms,null,null);
             Toast.makeText(getApplicationContext(), "응급신고가 접수되었습니다!", Toast.LENGTH_LONG).show();
         }
 

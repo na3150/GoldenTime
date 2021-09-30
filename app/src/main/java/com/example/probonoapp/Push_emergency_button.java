@@ -20,12 +20,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class activity_emergency extends AppCompatActivity {
+public class Push_emergency_button extends AppCompatActivity {
 
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(activity_emergency.this, activity_alarmList.class);
+        Intent intent = new Intent(Push_emergency_button.this, activity_alarmList.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
@@ -46,7 +46,7 @@ public class activity_emergency extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_emergency);
+            setContentView(R.layout.activity_push_emergency_button);
 
             //사용자가 푸시알림을 눌렀을 때 실행되도록
             Intent intent = getIntent();

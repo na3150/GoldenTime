@@ -34,7 +34,7 @@ public class MessagingService extends FirebaseMessagingService {
             int notificationId = -1;
             Context mContext = getApplicationContext();
 
-            Intent intent = new Intent(this, activity_pushedEmergencyButton.class); //푸시알림 눌렀을 때 이동하는 페이지
+            Intent intent = new Intent(this, Emergency_getFall.class); //푸시알림 눌렀을 때 이동하는 페이지
             intent.setAction(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
 

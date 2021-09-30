@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_pushedEmergencyButton">
+    tools:context=".Emergency_getFall">
 
     <Button
         android:id="@+id/buttonNotEmergency2"
@@ -43,7 +43,7 @@
         android:backgroundTint="#000"
         android:fontFamily="@font/gmarketsansttflight"
         android:gravity="center"
-        android:padding="30dp"
+        android:padding="10dp"
         android:text="TextView"
         android:textColor="#FFF"
         android:textSize="15dp"
@@ -58,15 +58,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/gmarketsansttflight"
+        android:gravity="center"
         android:text="응급상황이 아니라면 아래의 버튼을 눌러주세요.\n\n\'5분 이내\'에 버튼을 누르지 않으면 자동신고됩니다."
         android:textColor="#000"
-        android:gravity="center"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_notifyPushedEmergencyButton"
-        app:layout_constraintVertical_bias="0.204" />
+        app:layout_constraintVertical_bias="0.138" />
 
     <LinearLayout
         android:id="@+id/timeCountSettingLV"

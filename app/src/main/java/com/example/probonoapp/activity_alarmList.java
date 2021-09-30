@@ -27,7 +27,7 @@ public class activity_alarmList extends AppCompatActivity {
         emergencyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_alarmList.this,activity_emergency.class); //화면 이동
+                Intent intent = new Intent(activity_alarmList.this, Push_emergency_button.class); //화면 이동
                 startActivity(intent);
                 finish(); // 현재 액티비티 파괴
             }

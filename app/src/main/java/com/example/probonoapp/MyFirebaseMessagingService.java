@@ -2,12 +2,19 @@ package com.example.probonoapp;
 
 import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.util.Log;
+
+import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
+
+    //FCM은 백그라운드인 경우에 onMessageReceived 으로 가지않고 자동으로 title과 body를 뽑아와 푸시를 띄워준다.
+    // 즉, 푸시를 커스텀 할 수 없다.
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // ...
@@ -37,4 +44,5 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
 
     }
+
 }
