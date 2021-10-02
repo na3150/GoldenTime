@@ -32,15 +32,18 @@ public class Push_emergency_button extends AppCompatActivity {
     }
 
     boolean isAlarm = false; //default는 true로 한 뒤(현재는 일단 false로 해뒀습니다), 응급상황이 아니라는 버튼을 누르면 true로 변환
-    int spentTime =0; //화장실에 머무른 시간
+    int spentTime = 0; //화장실에 머무른 시간
     String OldName,OldGender, OldBirth, OldLocate; //119전송할 노약자 정보
     String phonenumber; //119전송할 보호자 번호
 
+    //백그라운드 시간 계산: lambda에서 보낸 시간 데이터와 현재시간 데이터를 1초 단위로 받아와서 5분 이상이 되면 sms 전송하도록 구현?
 
-        //사용자 정보 가져오기위한 참조
+
+       //사용자 정보 가져오기위한 참조
         private FirebaseUser user;
         private DatabaseReference reference;
         private String userID;
+        private String emergencyTime; //응급버튼을 누른시각
         Button notEmergency;
 
         @Override
@@ -103,6 +106,7 @@ public class Push_emergency_button extends AppCompatActivity {
                 SmsManager smsManager = SmsManager.getDefault();
                 smsManager.sendTextMessage(smsNumber,null, sms,null,null);
                 Toast.makeText(getApplicationContext(), "응급신고가 접수되었습니다!", Toast.LENGTH_LONG).show();
+                isAlarm = false; //다시 false로 변경
             }
         }
 

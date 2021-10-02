@@ -21,7 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.762" />
-
     <Button
         android:id="@+id/fallButton"
         android:layout_width="200dp"
@@ -36,7 +35,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/timeSpentInToiletButton"
         android:layout_width="200dp"
@@ -51,7 +49,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
-
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="76dp"

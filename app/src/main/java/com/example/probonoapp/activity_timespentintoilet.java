@@ -27,6 +27,8 @@ public class activity_timespentintoilet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_timespentintoilet);
 
+        //dataSnapshot으로 센서값 가져와서 화장실 입장 'enter'가 false이면 '화장실에 없습니다' 띄우기
+
 
 
         //화장실에 머무른 시간이 60분 초과됐을 때 (현재는 default) if(time> = 60)
@@ -35,18 +37,18 @@ public class activity_timespentintoilet extends AppCompatActivity {
         startActivity(intent);
         finish();
 
-        //화장실이 머무른 시간이 30-59분 else if(time >= 30)
+        //화장실이 머무른 시간이 30-59분 else if(time >= 30) thirty_mins == true && sixty_mins == false
         //createAlarmToilet(30);
         //Intent intent1 = new Intent(activity_timespentintoilet.this, activity_spentTimeInToiletMoreThan30.class);
         //startActivity(intent1);
         //finish();
 
-        //화장실이 머무른 시간이 0-30분 else if(time > 0)
+        //화장실이 머무른 시간이 0-30분 else if(time > 0): sixtymins: true
         //Intent intent2 = new Intent(activity_timespentintoilet.this, activitiy_spentTimeIntoiletLessThan20.class);
         //startActivity(intent2);
         //finish();
 
-        //화장실에 없는 경우 else
+        //화장실에 없는 경우 : 'enter'가 false
         //Intent intent3 = new Intent(activity_timespentintoilet.this, activity_notInToilet.class);
         //startActivity(intent3);
         //finish();
