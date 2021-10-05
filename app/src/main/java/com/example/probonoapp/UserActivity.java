@@ -4,16 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,22 +16,18 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static com.google.firebase.auth.FirebaseAuth.getInstance;
 
-public class activity_user extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(activity_user.this, activity_menu.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
+        Intent intent = new Intent(UserActivity.this, MenuActivity.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);    //인텐트 플래그 설정
         startActivity(intent);  //인텐트 이동
         finish();   //현재 액티비티 종료
@@ -91,7 +80,7 @@ public class activity_user extends AppCompatActivity {
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(activity_user.this, "something wrong happened!", Toast.LENGTH_LONG).show();
+                Toast.makeText(UserActivity.this, "something wrong happened!", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -123,7 +112,7 @@ public class activity_user extends AppCompatActivity {
 
                 //setValue : 데이터베이스에 삽입
                 mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(result);
-                Toast.makeText(activity_user.this,"수정 완료!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserActivity.this,"수정 완료!",Toast.LENGTH_SHORT).show();
 
 
             }

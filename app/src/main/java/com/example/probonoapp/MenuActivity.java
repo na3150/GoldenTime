@@ -3,7 +3,6 @@ package com.example.probonoapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 
-public class activity_menu extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
 
     Button buttonLogout; //로그아웃버튼
     Button buttonIntroduce; //어플리케이션 소개 버튼
@@ -54,7 +53,7 @@ public class activity_menu extends AppCompatActivity {
                                 // Log and toast
                                 String msg = getString(R.string.msg_token_fmt, token);
                                 Log.d(TAG, msg);
-                                Toast.makeText(activity_menu.this, msg, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MenuActivity.this, msg, Toast.LENGTH_SHORT).show();
                             }
                         });
             }
@@ -65,7 +64,7 @@ public class activity_menu extends AppCompatActivity {
         buttonLogout.setOnClickListener((new View.OnClickListener() { //로그아웃 버튼을 눌렀을 때
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_menu.this, LogoutActivity.class); //화면 이동
+                Intent intent = new Intent(MenuActivity.this, LogoutActivity.class); //화면 이동
                 startActivity(intent);
                 finish(); // 현재 액티비티 파괴
             }
@@ -75,7 +74,7 @@ public class activity_menu extends AppCompatActivity {
         buttonIntroduce.setOnClickListener((new View.OnClickListener() { //어플리케이션 소개 버튼을 눌렀을 때
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(activity_menu.this, activity_introduce.class); //화면 이동
+                Intent intent2 = new Intent(MenuActivity.this, InstructionsActivity.class); //화면 이동
                 startActivity(intent2);
                 finish(); // 현재 액티비티 파괴
             }
@@ -85,7 +84,7 @@ public class activity_menu extends AppCompatActivity {
         buttonAccount.setOnClickListener((new View.OnClickListener() { //계정관리 버튼을 눌렀을 떄
             @Override
             public void onClick(View v) {
-                Intent intent3 = new Intent(activity_menu.this, activity_user.class); //화면 이동
+                Intent intent3 = new Intent(MenuActivity.this, UserActivity.class); //화면 이동
                 startActivity(intent3);
                 finish(); // 현재 액티비티 파괴
             }
@@ -95,7 +94,7 @@ public class activity_menu extends AppCompatActivity {
         buttonToilet.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent4 = new Intent(activity_menu.this, activity_timespentintoilet.class);
+                Intent intent4 = new Intent(MenuActivity.this, TimespentintoiletActivity.class);
                 startActivity(intent4);
                 finish();
             }
@@ -105,7 +104,7 @@ public class activity_menu extends AppCompatActivity {
         buttonAlarmList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent5 = new Intent(activity_menu.this, activity_alarmList.class);
+                Intent intent5 = new Intent(MenuActivity.this, AlarmList.class);
                 startActivity(intent5);
                 finish();
             }

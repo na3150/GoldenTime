@@ -1,11 +1,11 @@
 package com.example.probonoapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -15,12 +15,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class activitiy_spentTimeIntoiletLessThan30 extends AppCompatActivity {
+public class SpentTimeIntoiletLessThan60 extends AppCompatActivity {
 
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(activitiy_spentTimeIntoiletLessThan30.this, activity_menu.class);
+        Intent intent = new Intent(SpentTimeIntoiletLessThan60.this, MenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
@@ -34,7 +34,7 @@ public class activitiy_spentTimeIntoiletLessThan30 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_activitiy_spent_time_intoilet_less_than30);
+        setContentView(R.layout.activity_activitiy_spent_time_intoilet_less_than60);
 
         final TextView getoldNameTextView = (TextView)findViewById(R.id.textView31);
         user = FirebaseAuth.getInstance().getCurrentUser();

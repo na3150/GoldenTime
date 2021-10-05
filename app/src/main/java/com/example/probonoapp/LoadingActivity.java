@@ -24,7 +24,7 @@ public class LoadingActivity extends AppCompatActivity {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
         Intent intent = new Intent(LoadingActivity.this, LoginActivity.class);
-        Intent intent2 = new Intent(LoadingActivity.this, activity_menu.class);
+        Intent intent2 = new Intent(LoadingActivity.this, MenuActivity.class);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override

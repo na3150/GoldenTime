@@ -4,9 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,9 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
-import java.util.Map;
 
-public class activity_register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
 
     private FirebaseAuth mFirebaseAuth; //파이어베이스 인증처리
@@ -41,7 +38,7 @@ public class activity_register extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(activity_register.this, LoginActivity.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
+        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);    //인텐트 플래그 설정
         startActivity(intent);  //인텐트 이동
         finish();   //현재 액티비티 종료
@@ -130,7 +127,7 @@ public class activity_register extends AppCompatActivity {
                 }
 
                 //firebase Auth 진행
-                mFirebaseAuth.createUserWithEmailAndPassword(strEmail,strPwd).addOnCompleteListener(activity_register.this, new OnCompleteListener<AuthResult>() {
+                mFirebaseAuth.createUserWithEmailAndPassword(strEmail,strPwd).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
@@ -152,14 +149,14 @@ public class activity_register extends AppCompatActivity {
                             //setValue : 데이터베이스에 삽입
                             mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(result);
 
-                            Toast.makeText(activity_register.this,"회원가입 성공!",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this,"회원가입 성공!",Toast.LENGTH_SHORT).show();
 
-                            Intent intent2 = new Intent(activity_register.this, activity_signcomplete.class);
+                            Intent intent2 = new Intent(RegisterActivity.this, SignCompleteActivity.class);
                             startActivity(intent2); //가입 완료 페이지(3초)
                             finish();
                         }
                         else{
-                            Toast.makeText(activity_register.this,"회원가입 실패!",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterActivity.this,"회원가입 실패!",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

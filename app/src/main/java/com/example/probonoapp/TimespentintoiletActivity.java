@@ -1,8 +1,7 @@
 package com.example.probonoapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
+import static com.example.probonoapp.R.color.less30color;
+import static com.example.probonoapp.R.color.more30color;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -10,13 +9,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.TextView;
 
-public class activity_timespentintoilet extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
+
+public class TimespentintoiletActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        Intent intent = new Intent(activity_timespentintoilet.this, activity_menu.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
+        Intent intent = new Intent(TimespentintoiletActivity.this, MenuActivity.class); //지금 액티비티에서 다른 액티비티로 이동하는 인텐트 설정
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);    //인텐트 플래그 설정
         startActivity(intent);  //인텐트 이동
         finish();   //현재 액티비티 종료
@@ -30,21 +34,27 @@ public class activity_timespentintoilet extends AppCompatActivity {
         //dataSnapshot으로 센서값 가져와서 화장실 입장 'enter'가 false이면 '화장실에 없습니다' 띄우기
 
 
+        TextView txt_toilet_time;
+        txt_toilet_time = (TextView) findViewById(R.id.et_toiletTime2);
+        int less30Color = ContextCompat.getColor(getApplicationContext(), less30color);
+        int more30Color = ContextCompat.getColor(getApplicationContext(),more30color);
 
         //화장실에 머무른 시간이 60분 초과됐을 때 (현재는 default) if(time> = 60)
         createAlarmToilet(60); //팝업 알림
-        Intent intent = new Intent(activity_timespentintoilet.this, activity_notify119.class);
+        Intent intent = new Intent(TimespentintoiletActivity.this, Notify119Activity.class);
         startActivity(intent);
         finish();
 
         //화장실이 머무른 시간이 30-59분 else if(time >= 30) thirty_mins == true && sixty_mins == false
         //createAlarmToilet(30);
+        //txt_toilet_time.setTextColor(more30Color); //text 색상 변경
         //Intent intent1 = new Intent(activity_timespentintoilet.this, activity_spentTimeInToiletMoreThan30.class);
         //startActivity(intent1);
         //finish();
 
-        //화장실이 머무른 시간이 0-30분 else if(time > 0): sixtymins: true
+        //화장실이 머무른 시간이 0-30분 setTextColor
         //Intent intent2 = new Intent(activity_timespentintoilet.this, activitiy_spentTimeIntoiletLessThan20.class);
+        //txt_toilet_time.setTextColor(less30Color); //text 색상 변경
         //startActivity(intent2);
         //finish();
 
@@ -58,7 +68,7 @@ public class activity_timespentintoilet extends AppCompatActivity {
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default");
 
-        builder.setSmallIcon(R.drawable.logoclock);
+        builder.setSmallIcon(R.drawable.icon_goldentime_round);
         builder.setContentTitle("[안전바 응급호출 도우미]");
         builder.setContentText( "TimeSpentInToilet");
         //30분 이상 화장실에서 나오지 않았을 때

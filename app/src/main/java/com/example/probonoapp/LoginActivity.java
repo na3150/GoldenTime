@@ -5,10 +5,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -68,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
 
                             //로그인 성공
-                            Intent intent = new Intent(LoginActivity.this,activity_menu.class); //화면 이동
+                            Intent intent = new Intent(LoginActivity.this, MenuActivity.class); //화면 이동
                             startActivity(intent);
 
                             finish(); // 현재 액티비티 파괴
@@ -86,7 +84,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //회원가입 버튼 누를시
-                Intent intent = new Intent(LoginActivity.this,activity_register.class);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });

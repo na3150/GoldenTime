@@ -20,7 +20,7 @@ public class activity_spentTimeInToiletMoreThan30 extends AppCompatActivity {
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(activity_spentTimeInToiletMoreThan30.this, activity_menu.class);
+        Intent intent = new Intent(activity_spentTimeInToiletMoreThan30.this, MenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();

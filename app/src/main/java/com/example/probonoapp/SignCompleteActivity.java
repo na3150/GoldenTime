@@ -8,7 +8,7 @@ import android.os.Handler;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 
-public class activity_signcomplete extends AppCompatActivity {
+public class SignCompleteActivity extends AppCompatActivity {
 
 
     @Override

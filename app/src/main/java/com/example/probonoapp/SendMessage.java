@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class sendMessage{
+public class SendMessage {
 
     //사용자 정보 가져오기위한 참조
     private FirebaseUser user;

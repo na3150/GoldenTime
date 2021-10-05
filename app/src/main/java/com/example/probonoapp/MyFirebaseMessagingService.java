@@ -2,16 +2,14 @@ package com.example.probonoapp;
 
 import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Build;
+import android.os.PowerManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -23,11 +21,19 @@ import com.google.firebase.messaging.RemoteMessage;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // ...
         super.onMessageReceived(remoteMessage);
-        makeNotification(remoteMessage); //포그라운드일 때
+
+        //화면 깨우기
+        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE );
+        @SuppressLint("InvalidWakeLockTag") PowerManager.WakeLock wakeLock = pm.newWakeLock( PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "TAG" );
+        wakeLock.acquire(3000);
+
+        //푸시알림 전송
+        makeNotification(remoteMessage);
 
         Log.d(TAG, "From: " + remoteMessage.getFrom());
 
@@ -45,7 +51,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
 
-    private void makeNotification(RemoteMessage remoteMessage) { //포그라운드 처리
+    private void makeNotification(RemoteMessage remoteMessage) {
         try {
             int notificationId = 1;
             Context mContext = getApplicationContext();
@@ -54,9 +60,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             intent.setAction(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
 
-            String title = "[안전바 응급호출 도우미]";
-            String message = "노약자의 응급상황이 감지되었습니다. 신속하게 안전을 확인해주세요. 5분 이내에 응답이 없으면 119응급신고가 접수됩니다.";
-            String topic = remoteMessage.getFrom();
+            String title = remoteMessage.getData().get("title");
+            String message = remoteMessage.getData().get("body");
+            //String topic = remoteMessage.getFrom();
 
             NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "10001");
@@ -64,11 +70,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 builder.setVibrate(new long[] {200, 100, 200});
             }
 
-            builder.setSmallIcon(R.drawable.logoclock)
+            builder.setSmallIcon(R.drawable.icon_goldentime_round)
                     .setAutoCancel(true)
                     .setDefaults(Notification.DEFAULT_SOUND)
                     .setContentTitle(title)
-                    .setContentText("응급상황발생: 응급호출 버튼")
+                    .setContentText("응급상황발생")
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(message));
             PendingIntent pendingIntent = PendingIntent.getActivity(this, notificationId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
             builder.setContentIntent(pendingIntent);
@@ -78,8 +84,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Toast.makeText(getApplicationContext(), "알림에 오류가 발생했습니다.", Toast.LENGTH_SHORT).show();
             Log.e("error Notify", nullException.toString());
         }
+        startService(new Intent(getApplication(),CountDownService.class)); //알림 전송 후 5분 카운트 다운
     }
-
     }
 
 
