@@ -41,7 +41,7 @@ public class TimespentintoiletActivity extends AppCompatActivity {
 
         //화장실에 머무른 시간이 60분 초과됐을 때 (현재는 default) if(time> = 60)
         createAlarmToilet(60); //팝업 알림
-        Intent intent = new Intent(TimespentintoiletActivity.this, Notify119Activity.class);
+        Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThan60.class);
         startActivity(intent);
         finish();
 

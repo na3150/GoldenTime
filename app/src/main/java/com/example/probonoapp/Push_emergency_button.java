@@ -1,9 +1,8 @@
 package com.example.probonoapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.Log;
@@ -11,6 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -86,12 +89,37 @@ public class Push_emergency_button extends AppCompatActivity {
         });
 
             //응급상황이 아니라는 버튼을 눌렀을 때
-            notEmergency = (Button)findViewById(R.id.bt_notEmergency);
+            notEmergency = (Button)findViewById(R.id.buttonNotEmergency);
 
             notEmergency.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    isAlarm = false; //false로 변경
+                    View dialogView = getLayoutInflater().inflate(R.layout.alertdialog, null);
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                    builder.setView(dialogView);
+
+                    final AlertDialog alertDialog = builder.create();
+                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    alertDialog.show();
+
+                    Button ok_btn = dialogView.findViewById(R.id.yesBtn);
+                    ok_btn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            isAlarm = false;
+                            Toast.makeText(getApplicationContext(), "응급상황이 아닌것으로 확인되었습니다.", Toast.LENGTH_SHORT).show();
+                            alertDialog.dismiss();
+                        }
+                    });
+                    Button cancle_btn = dialogView.findViewById(R.id.noBtn);
+                    cancle_btn.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(getApplicationContext(), "응급상황 유지", Toast.LENGTH_SHORT).show();
+                            alertDialog.dismiss();
+                        }
+                    });
                 }
             });
 

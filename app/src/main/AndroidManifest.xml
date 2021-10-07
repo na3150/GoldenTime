@@ -16,7 +16,7 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <meta-data
         android:name="com.google.firebase.messaging.default_notification_channel_id"
         android:value="@string/default_notification_channel_id"/>
@@ -36,23 +36,35 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".CountDownService"/>
+        <service android:name=".CountDownService"
+            android:exported="true"
+            android:foregroundServiceType="location"
+            />
         <activity android:name=".Push_emergency_button" >
             <intent-filter>
-                <action android:name="com.example.probonoApp_notification_action"/>
+                <action android:name=".Push_emergency_button"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
         <activity android:name=".AlarmList" />
         <activity android:name=".Emergency_getFall">
+            <intent-filter>
+                <action android:name="com.example.probonoApp_getfall_notification_action"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
         <activity android:name=".NotInToiletActivity" />
         <activity android:name=".SpentTimeIntoiletLessThan60" />
-        <activity android:name=".activity_spentTimeInToiletMoreThan30" />
+        <activity android:name=".activity_spentTimeInToiletMoreThan30">
+            <intent-filter>
+                <action android:name="com.example.probonoApp_30minute_notification_action"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".TimespentintoiletActivity" />
         <activity android:name=".CompleteAlarmActivity" />
         <activity android:name=".SignCompleteActivity" />
-        <activity android:name=".Notify119Activity" />
+        <activity android:name=".SpentTimeInToiletMoreThan60" />
         <activity android:name=".guide_third" />
         <activity android:name=".guide_second" />
         <activity android:name=".guide_first" />

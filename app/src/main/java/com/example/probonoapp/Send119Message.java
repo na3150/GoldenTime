@@ -1,9 +1,6 @@
 package com.example.probonoapp;
 
-import android.content.Context;
 import android.telephony.SmsManager;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -16,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class SendMessage {
+public class Send119Message {
 
     //사용자 정보 가져오기위한 참조
     private FirebaseUser user;

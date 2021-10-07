@@ -1,11 +1,11 @@
 package com.example.probonoapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AlarmList extends AppCompatActivity {
 
@@ -24,12 +24,24 @@ public class AlarmList extends AppCompatActivity {
         setContentView(R.layout.activity_alarm_list);
 
         Button emergencyButton = (Button)findViewById(R.id.emergencyButton);
+        Button getFallButton = (Button)findViewById(R.id.fallButton);
+
+
         emergencyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AlarmList.this, Push_emergency_button.class); //화면 이동
                 startActivity(intent);
                 finish(); // 현재 액티비티 파괴
+            }
+        });
+
+        getFallButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(AlarmList.this, Emergency_getFall.class);
+                startActivity(intent2);
+                finish();
             }
         });
     }

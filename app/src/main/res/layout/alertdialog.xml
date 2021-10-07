@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/button_background"
+    android:backgroundTint="#fff"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:padding="20dp"
+        android:text="응급상황이 아닌 것이 확인되었으면 맞음,\n\n아니면 취소를 눌러주세요"
+        android:textColor="#000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/noBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/gmarketsansttflight"
+            android:background="@drawable/button_background"
+            android:layout_marginBottom="10dp"
+            android:text="취소" />
+
+        <Button
+            android:id="@+id/yesBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/gmarketsansttflight"
+            android:background="@drawable/button_background"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="맞음" />
+    </LinearLayout>
+
+</LinearLayout>

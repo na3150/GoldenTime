@@ -39,4 +39,9 @@
         <item name="android:shadowRadius">2</item>
     </style>
 
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="fontFamily">@font/gmarketsansttflight</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
 </resources>

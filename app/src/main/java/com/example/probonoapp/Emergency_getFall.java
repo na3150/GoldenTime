@@ -1,18 +1,19 @@
 package com.example.probonoapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,16 +26,25 @@ import com.google.firebase.database.ValueEventListener;
 //노약자가 안전바의 응급호출 버튼을 눌렀을 때
 public class Emergency_getFall extends AppCompatActivity {
 
+    @Override
+    public void onBackPressed() { //뒤로가기
+        super.onBackPressed();
+        Intent intent = new Intent(Emergency_getFall.this, AlarmList.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+    }
+
+
     //사용자 정보 가져오기위한 참조
     private FirebaseUser user;
-    private DatabaseReference reference ,ref;
+    private DatabaseReference reference;
     private String userID;
 
     String oldName,OldGender, OldBirth, OldLocate; //119전송할 노약자 정보;
     String phonenumber; //119전송할 보호자 번호
     boolean isAlarm = false; //default는 true로 한 뒤(현재는 일단 false로 해뒀습니다), 응급상황이 아니라는 버튼을 누르면 true로 변환
     int spentTime = 0; //응급호출버튼을 누르고 경과된 시간
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,24 +65,17 @@ public class Emergency_getFall extends AppCompatActivity {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
                 oldName = dataSnapshot.child("노약자 성함").getValue(String.class);
                 OldGender = dataSnapshot.child("노약자 성별").getValue(String.class);
                 OldBirth = dataSnapshot.child("노약자 생년월일").getValue(String.class);
                 OldLocate = dataSnapshot.child("노약자 자택주소").getValue(String.class);
                 phonenumber = dataSnapshot.child("보호자 전화번호").getValue(String.class);
+                getoldNameTextView.setText("\""+oldName+"\"님의 안전이 우려됩니다.\n\n\""+oldName+"\"님의 낙상이 감지된 상태이니 \n\n안전을 확인해주세요.");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
-
-        //어떤 응급상황인지 if-else문으로 구분해서 setText -> 응급신고 문자는 동일
-        //응급호출 버튼을 눌렀을 때
-        getoldNameTextView.setText("\""+oldName+"\"님의 안전이 우려됩니다.\n\n\""+oldName+"\"님이 응급호출 버튼을 누른 상태이니 안전을 확인해주세요.");
-        
-        //낙상사고가 발생한 경우
-        //getoldNameTextView.setText("\""+oldName+"\"님의 안전이 우려됩니다.\n\n\""+oldName+"\"님의 낙상사고가 감지되었으니, 안전을 확인해주세요.");
 
         //응급신고 메세지를 전송할 번호, 일단 제 번호로 해뒀습니다.
         String smsNumber = "01050313150";
@@ -84,7 +87,7 @@ public class Emergency_getFall extends AppCompatActivity {
         //SmsManager smsManager = SmsManager.getDefault();
         //smsManager.sendTextMessage(smsNumber,null, sms,null,null);
         
-        Button notEmergency = (Button)findViewById(R.id.buttonNotEmergency2); //응급상황이 아니라는 버튼을 눌렀을 때
+        Button notEmergency = (Button)findViewById(R.id.buttonNotEmergency); //응급상황이 아니라는 버튼을 눌렀을 때
         notEmergency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

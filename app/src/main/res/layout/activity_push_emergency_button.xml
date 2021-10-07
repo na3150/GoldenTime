@@ -20,7 +20,7 @@
         android:id="@+id/imageView16"
         android:layout_width="85dp"
         android:layout_height="112dp"
-        android:layout_marginTop="33dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_emergency"
@@ -56,16 +56,18 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView16" />
 
     <Button
-        android:id="@+id/bt_notEmergency"
+        android:id="@+id/buttonNotEmergency"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:background="@drawable/button_background"
         android:backgroundTint="#000"
         android:fontFamily="@font/gmarketsansttflight"
+        android:onClick="onClickShowAlert"
         android:text="응급상황이 아닙니다."
         android:textSize="14dp"
         app:backgroundTint="#E10000"
+        app:layout_constraintBottom_toTopOf="@+id/textView36"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,13 +77,16 @@
         android:id="@+id/textView36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginBottom="108dp"
         android:fontFamily="@font/gmarketsansttflight"
         android:gravity="center"
         android:text="5분 이내에 응답하지 않을 시\n\n자동으로 응급 신고가 접수됩니다."
         android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_notEmergency" />
+        app:layout_constraintTop_toBottomOf="@+id/textView35"
+        app:layout_constraintVertical_bias="0.771" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

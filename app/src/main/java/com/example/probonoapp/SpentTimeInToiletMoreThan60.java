@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Notify119Activity extends AppCompatActivity {
+public class SpentTimeInToiletMoreThan60 extends AppCompatActivity {
 
     boolean isAlarm = false; //default는 true로 한 뒤(현재는 일단 false로 해뒀습니다), 응급상황이 아니라는 버튼을 누르면 true로 변환
     int spentTime =0; //화장실에 머무른 시간
@@ -29,7 +29,7 @@ public class Notify119Activity extends AppCompatActivity {
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(Notify119Activity.this, MenuActivity.class);
+        Intent intent = new Intent(SpentTimeInToiletMoreThan60.this, MenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
@@ -43,7 +43,7 @@ public class Notify119Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notify119);
+        setContentView(R.layout.activity_spent_timeintoilet_more_than60);
 
         final TextView getoldNameTextView = (TextView)findViewById(R.id.et_notify119);
 
