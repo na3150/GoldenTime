@@ -26,9 +26,10 @@ public class Send119Message {
     String sms; //응급 문자 내용
 
     //smsNumber = "01050313150";
-    //sms = "[안전바 응급호출 도우미]\n\n" + "노약자 \""+oldName+"\"님에게 응급상황이 발생하였습니다. \n구조대 출동이 필요합니다.\n\n"+
-           // "자택주소: "+OldLocate + "\n성별: "+OldGender + "\n생년월일: " +OldBirth+"\n보호자 전화번호: "+phonenumber;
+    //sms = "[안전바 응급호출 도우미]\n\n" + "노약자 \""+oldName+"\"님에게 응급상황이 발생하였습니다. \n구조대 출동이 필요합니다.\n\n"+"자택주소: "+OldLocate + "\n성별: "+OldGender + "\n생년월일: " +OldBirth+"\n보호자 전화번호: "+phonenumber;
 
+    
+    //api를 호출해서 lambda -> aws sns -> sms 전송
     void setSmsNumber(String smsNumber){
         this.smsNumber = smsNumber;
     }
@@ -38,11 +39,11 @@ public class Send119Message {
     }
 
     void makeSendMessage(){ //응급문자 보내기 함수
+
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("UserAccount");
         userID = user!= null? user.getUid() : null;
         reference.child(userID).addValueEventListener(new ValueEventListener() {
-
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 

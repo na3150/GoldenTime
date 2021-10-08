@@ -20,6 +20,7 @@ import com.google.firebase.messaging.RemoteMessage;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 
+
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // ...
@@ -52,8 +53,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         try {
             int notificationId = 1;
             Context mContext = getApplicationContext();
-
-
 
             String title = remoteMessage.getData().get("title");
             String message = remoteMessage.getData().get("body");
@@ -111,8 +110,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             this.startService(serviceIntent);
         }
 
-        //startService(new Intent(getApplication(),CountDownService.class)); //알림 전송 후 5분 카운트 다운
-        //다른 activity의 버튼 값 가져오기.... 아 버튼 아이디를 다 통일해??
 
     }
 }
