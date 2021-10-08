@@ -41,14 +41,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/tttogether"
-        android:text="60분 50초"
+        android:text="60분"
         android:textColor="#D80404"
         android:textSize="45dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_notify119"
-        app:layout_constraintVertical_bias="0.069" />
+        app:layout_constraintVertical_bias="0.078" />
 
     <TextView
         android:id="@+id/textView19"
@@ -56,7 +56,7 @@
         android:layout_height="40dp"
         android:fontFamily="@font/gmarketsansttflight"
         android:gravity="center"
-        android:text="동안 머무르고 있습니다."
+        android:text="을 초과하였습니다."
         android:textColor="#000"
         android:textSize="18dp"
         app:layout_constraintBottom_toTopOf="@+id/buttonNotEmergency"

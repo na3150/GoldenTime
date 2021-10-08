@@ -4,6 +4,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
@@ -77,29 +80,40 @@ public class Emergency_getFall extends AppCompatActivity {
             }
         });
 
-        //응급신고 메세지를 전송할 번호, 일단 제 번호로 해뒀습니다.
-        String smsNumber = "01050313150";
-        //전송할 문자 내용
-        String sms = "[안전바 응급호출 도우미]\n\n" + "노약자 \""+oldName+"\"님에게 응급상황이 발생하였습니다. \n구조대 출동이 필요합니다.\n\n"+
-                "자택주소: "+OldLocate + "\n성별: "+OldGender + "\n생년월일: " +OldBirth+"\n보호자 전화번호: "+phonenumber;
-        
-        //메세지 전송 테스트 => 현재 권한 문제가 좀 있음.
-        //SmsManager smsManager = SmsManager.getDefault();
-        //smsManager.sendTextMessage(smsNumber,null, sms,null,null);
         
         Button notEmergency = (Button)findViewById(R.id.buttonNotEmergency); //응급상황이 아니라는 버튼을 눌렀을 때
         notEmergency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 isAlarm = false; //false로 변경
+                View dialogView = getLayoutInflater().inflate(R.layout.alertdialog, null);
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                builder.setView(dialogView);
+
+                final AlertDialog alertDialog = builder.create();
+                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                alertDialog.show();
+
+                Button ok_btn = dialogView.findViewById(R.id.yesBtn);
+                ok_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        isAlarm = false;
+                        Toast.makeText(getApplicationContext(), "응급상황이 아닌것으로 확인되었습니다.", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
+                    }
+                });
+                Button cancle_btn = dialogView.findViewById(R.id.noBtn);
+                cancle_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getApplicationContext(), "응급상황 유지", Toast.LENGTH_SHORT).show();
+                        alertDialog.dismiss();
+                    }
+                });
             }
         });
-        if (spentTime>5 && isAlarm){ //응급호출 버튼을 누른이후 5분 경과+응급상황이 아니라는 버튼을 누르지 않았을 때
-            //SmsManager smsManager1 = SmsManager.getDefault();
-           // smsManager.sendTextMessage(smsNumber,null, sms,null,null);
-            Toast.makeText(getApplicationContext(), "응급신고가 접수되었습니다!", Toast.LENGTH_LONG).show();
-        }
-
     }
 
     private void createAlarmEmergencyButton(){ //핸드폰 팝업 알림 함수
@@ -123,4 +137,5 @@ public class Emergency_getFall extends AppCompatActivity {
         // 정의해야하는 각 알림의 고유한 int값
         notificationManager.notify(1, builder.build());
     }
+
 }

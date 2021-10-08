@@ -20,7 +20,6 @@ import com.google.firebase.messaging.RemoteMessage;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 
-
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // ...
@@ -35,7 +34,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         makeNotification(remoteMessage);
 
         Log.d(TAG, "From: " + remoteMessage.getFrom());
-
 
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
@@ -73,6 +71,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 intent.setAction(Intent.ACTION_MAIN);
                 intent.addCategory(Intent.CATEGORY_LAUNCHER);
             }
+            else if (click_action.equals("Emergency_getFall")){
+                intent = new Intent(this, Emergency_getFall.class); //푸시알림 눌렀을 때 이동하는 페이지
+                intent.setAction(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_LAUNCHER);
+            }
 
             //else if (click_action.equals(""))
             NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
@@ -90,9 +93,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             PendingIntent pendingIntent = PendingIntent.getActivity(this, notificationId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
             builder.setContentIntent(pendingIntent);
 
-           /* if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) { //버전 체크
-                notificationManager.createNotificationChannel(new NotificationChannel("default", "기본 채널", NotificationManager.IMPORTANCE_DEFAULT));
-            }*/
+
             notificationManager.notify(notificationId, builder.build()); //알림 생성
 
         } catch (NullPointerException nullException) {
@@ -109,8 +110,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         else {
             this.startService(serviceIntent);
         }
-
-
     }
 }
 

@@ -69,7 +69,6 @@ public class SpentTimeInToiletMoreThan60 extends AppCompatActivity {
             }
         });
 
-
         //응급상황이 아니라는 버튼을 눌렀을 때
         Button notEmergency = (Button)findViewById(R.id.buttonNotEmergency);
         notEmergency.setOnClickListener(new View.OnClickListener() {
