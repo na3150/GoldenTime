@@ -15,12 +15,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class NotInToiletActivity extends AppCompatActivity { //노약자가 화장실에 없는 경우
+public class NotEmergency extends AppCompatActivity { //노약자가 화장실에 없는 경우
 
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(NotInToiletActivity.this, MenuActivity.class);
+        Intent intent = new Intent(NotEmergency.this, MenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
@@ -46,7 +46,7 @@ public class NotInToiletActivity extends AppCompatActivity { //노약자가 화�
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                getoldNameTextView.setText("\'" + dataSnapshot.child("노약자 성함").getValue(String.class) + "\'님은 현재\n\n화장실에 계시지 않습니다!");
+                getoldNameTextView.setText("\'" + dataSnapshot.child("노약자 성함").getValue(String.class) + "\'님은 안전합니다.");
             }
 
             @Override
