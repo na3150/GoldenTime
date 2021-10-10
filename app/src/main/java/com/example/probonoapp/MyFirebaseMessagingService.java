@@ -40,7 +40,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
         }
 
-
         if (remoteMessage.getNotification() != null) {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
         }
@@ -77,7 +76,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 intent.addCategory(Intent.CATEGORY_LAUNCHER);
             }
 
-            //else if (click_action.equals(""))
             NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "10001");
             if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
@@ -112,5 +110,3 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
     }
 }
-
-

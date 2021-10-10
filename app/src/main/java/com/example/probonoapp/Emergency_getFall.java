@@ -47,17 +47,11 @@ public class Emergency_getFall extends AppCompatActivity {
     String oldName,OldGender, OldBirth, OldLocate; //119전송할 노약자 정보;
     String phonenumber; //119전송할 보호자 번호
     boolean isAlarm = false; //default는 true로 한 뒤(현재는 일단 false로 해뒀습니다), 응급상황이 아니라는 버튼을 누르면 true로 변환
-    int spentTime = 0; //응급호출버튼을 누르고 경과된 시간
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_getfall);
-
-        /*
-         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-        */
 
         final TextView getoldNameTextView = (TextView)findViewById(R.id.et_notifyPushedEmergencyButton);
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -75,12 +69,12 @@ public class Emergency_getFall extends AppCompatActivity {
                 phonenumber = dataSnapshot.child("보호자 전화번호").getValue(String.class);
                 getoldNameTextView.setText("\""+oldName+"\"님의 안전이 우려됩니다.\n\n\""+oldName+"\"님의 낙상이 감지된 상태이니 \n\n안전을 확인해주세요.");
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
 
-        
         Button notEmergency = (Button)findViewById(R.id.buttonNotEmergency); //응급상황이 아니라는 버튼을 눌렀을 때
         notEmergency.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,5 +131,4 @@ public class Emergency_getFall extends AppCompatActivity {
         // 정의해야하는 각 알림의 고유한 int값
         notificationManager.notify(1, builder.build());
     }
-
 }

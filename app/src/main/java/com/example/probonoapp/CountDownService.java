@@ -53,7 +53,7 @@ public class CountDownService extends Service { //응급신고 발생 후 5분 �
             return START_NOT_STICKY;
         }
 
-        CountDownTimer countDownTimer = new CountDownTimer(30000,1000) { //5분 카운트 다운 : test로 10초
+        CountDownTimer countDownTimer = new CountDownTimer(300000,1000) { //5분 카운트 다운 : test로 10초
             @Override
             public void onTick(long millisUntilFinished) {
                 getData();
