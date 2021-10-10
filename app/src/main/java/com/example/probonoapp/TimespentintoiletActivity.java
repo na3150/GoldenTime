@@ -3,16 +3,11 @@ package com.example.probonoapp;
 import static com.example.probonoapp.R.color.less30color;
 import static com.example.probonoapp.R.color.more30color;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 
 public class TimespentintoiletActivity extends AppCompatActivity {
@@ -39,24 +34,18 @@ public class TimespentintoiletActivity extends AppCompatActivity {
         int less30Color = ContextCompat.getColor(getApplicationContext(), less30color);
         int more30Color = ContextCompat.getColor(getApplicationContext(),more30color);
 
-        //화장실에 머무른 시간이 60분 초과됐을 때 (현재는 default) if(time> = 60)
-        createAlarmToilet(60); //팝업 알림
-        Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThan60.class);
-        startActivity(intent);
-        finish();
+        //화장실에 머무른 시간이 100% 초과됐을 때 (현재는 default) if(time> = 60)
+        //createAlarmToilet(60); //팝업 알림
+        //Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThan60.class);
+        //startActivity(intent);
+        //finish();
 
-        //화장실이 머무른 시간이 30-59분 else if(time >= 30) thirty_mins == true && sixty_mins == false
+        //화장실이 머무른 시간이 50% 초과되었을 때
         //createAlarmToilet(30);
         //txt_toilet_time.setTextColor(more30Color); //text 색상 변경
-        //Intent intent1 = new Intent(activity_timespentintoilet.this, activity_spentTimeInToiletMoreThan30.class);
-        //startActivity(intent1);
-        //finish();
-
-        //화장실이 머무른 시간이 0-30분 setTextColor
-        //Intent intent2 = new Intent(activity_timespentintoilet.this, activitiy_spentTimeIntoiletLessThan20.class);
-        //txt_toilet_time.setTextColor(less30Color); //text 색상 변경
-        //startActivity(intent2);
-        //finish();
+        Intent intent1 = new Intent(TimespentintoiletActivity.this, activity_spentTimeInToiletMoreThan30.class);
+        startActivity(intent1);
+        finish();
 
         //화장실에 없는 경우 : 'enter'가 false
         //Intent intent3 = new Intent(activity_timespentintoilet.this, activity_notInToilet.class);
@@ -64,7 +53,7 @@ public class TimespentintoiletActivity extends AppCompatActivity {
         //finish();
     }
 
-    private void createAlarmToilet(int time){ //핸드폰 팝업 알림 함수
+    /*private void createAlarmToilet(int time){ //핸드폰 팝업 알림 함수
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default");
 
@@ -88,6 +77,6 @@ public class TimespentintoiletActivity extends AppCompatActivity {
         // id값은
         // 정의해야하는 각 알림의 고유한 int값
         notificationManager.notify(1, builder.build());
-    }
+    }*/
 
 }

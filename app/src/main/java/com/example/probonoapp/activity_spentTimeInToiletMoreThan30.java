@@ -1,11 +1,11 @@
 package com.example.probonoapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -46,7 +46,7 @@ public class activity_spentTimeInToiletMoreThan30 extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                getoldNameTextView.setText("\'"+dataSnapshot.child("노약자 성함").getValue(String.class)+"\'님은 화장실에서");
+                getoldNameTextView.setText("\'"+dataSnapshot.child("노약자 성함").getValue(String.class)+"\'님이 \n\n화장실에서 머무른 시간이");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

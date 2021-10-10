@@ -32,8 +32,9 @@ public class RegisterActivity extends AppCompatActivity {
     private Button mBtnRegister;  //회원가입 버튼
     private String emergency ="0";
     String strGender = " "; //노약자 성별
-    RadioGroup getGender;
-    RadioButton radio_women, radio_men;
+    String strEmergency_time = " "; //60,90,120 중 노약자가 위험상황이라고 판단한 시간
+    RadioGroup getGender, getEmergency_time;
+    RadioButton radio_women, radio_men, radio_sixty, radio_ninety, radio_hundred_twenty;
 
     @Override
     public void onBackPressed() {
@@ -64,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
+
         mBtnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,10 +83,20 @@ public class RegisterActivity extends AppCompatActivity {
 
                 radio_women = (RadioButton)findViewById(R.id.radio_women);
                 radio_men  = (RadioButton)findViewById(R.id.radio_men);
+                radio_sixty = (RadioButton)findViewById(R.id.radio_sixty);
+                radio_ninety = (RadioButton)findViewById(R.id.radio_ninety);
+                radio_hundred_twenty = (RadioButton)findViewById(R.id.radio_hundred_twenty);
+
                 getGender = (RadioGroup)findViewById(R.id.get_gender);
+                getEmergency_time = (RadioGroup)findViewById(R.id.get_emergency_time);
+
 
                 if (radio_women.isChecked()) strGender = "여자";
                 else if (radio_men.isChecked()) strGender = "남자";
+
+                if (radio_sixty.isChecked()) strEmergency_time = "60";
+                if (radio_ninety.isChecked()) strEmergency_time = "90";
+                if (radio_hundred_twenty.isChecked()) strEmergency_time = "120";
 
 
                 if (oldName.getText().toString().length()==0){
@@ -118,6 +130,12 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
+                if (strEmergency_time == " "){
+                    Toast.makeText(getApplicationContext(),"노약자분이 화장실에서 몇분 경과시 응급상황으로 판단할건지 선택해주세요!",Toast.LENGTH_SHORT).show();
+                    getEmergency_time.requestFocus();
+                    return;
+                }
+
                 if(!EmtPwd.getText().toString().equals(mEtPwd2.getText().toString())){
                     Toast.makeText(getApplicationContext(),"비밀번호가 일치하지 않습니다!",Toast.LENGTH_SHORT).show();
                     EmtPwd.setText("");
@@ -144,6 +162,7 @@ public class RegisterActivity extends AppCompatActivity {
                             result.put("노약자 자택주소", strLocate);
                             result.put("보호자 전화번호", strPhonenumber);
                             result.put("emergency",emergency);
+                            result.put("emergency_time", strEmergency_time);
 
 
                             //setValue : 데이터베이스에 삽입
@@ -163,4 +182,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

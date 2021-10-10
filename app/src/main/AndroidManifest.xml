@@ -54,7 +54,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".NotInToiletActivity" />
-        <activity android:name=".SpentTimeIntoiletLessThan60" />
         <activity android:name=".activity_spentTimeInToiletMoreThan30">
             <intent-filter>
                 <action android:name="com.example.probonoApp_30minute_notification_action"/>
