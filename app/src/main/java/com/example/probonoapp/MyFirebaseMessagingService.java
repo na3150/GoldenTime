@@ -102,13 +102,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             if (limitTime.equals(half_emergencyTime)) //50%일 때
             {
-                intent = new Intent(this, activity_spentTimeInToiletMoreThan30.class); //푸시알림 눌렀을 때 이동하는 페이지
+                intent = new Intent(this, activity_spentTimeInToiletMoreThanHalf_50Percent.class); //푸시알림 눌렀을 때 이동하는 페이지
                 intent.setAction(Intent.ACTION_MAIN);
                 intent.addCategory(Intent.CATEGORY_LAUNCHER);
                 contentText = "경고: 화장실 이용시간 "+ Integer.toString(halfeT)+ "분 초과";
             }
             else if (limitTime.equals(emergencyTime)){ //100%일 때
-                intent = new Intent(this, SpentTimeInToiletMoreThan60.class); //푸시알림 눌렀을 때 이동하는 페이지
+                intent = new Intent(this, SpentTimeInToiletMoreThan_100Percent.class); //푸시알림 눌렀을 때 이동하는 페이지
                 intent.setAction(Intent.ACTION_MAIN);
                 intent.addCategory(Intent.CATEGORY_LAUNCHER);
             }

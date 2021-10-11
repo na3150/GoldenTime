@@ -1,14 +1,10 @@
 package com.example.probonoapp;
 
-import static com.example.probonoapp.R.color.less30color;
-import static com.example.probonoapp.R.color.more30color;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 public class TimespentintoiletActivity extends AppCompatActivity {
 
@@ -31,21 +27,16 @@ public class TimespentintoiletActivity extends AppCompatActivity {
 
         TextView txt_toilet_time;
         txt_toilet_time = (TextView) findViewById(R.id.et_toiletTime2);
-        int less30Color = ContextCompat.getColor(getApplicationContext(), less30color);
-        int more30Color = ContextCompat.getColor(getApplicationContext(),more30color);
 
         //화장실에 머무른 시간이 100% 초과됐을 때 (현재는 default) if(time> = 60)
-        //createAlarmToilet(60); //팝업 알림
-        Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThan60.class);
-        startActivity(intent);
-        finish();
+        //Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThan_100Percent.class);
+        //startActivity(intent);
+       // finish();
 
         //화장실이 머무른 시간이 50% 초과되었을 때
-        //createAlarmToilet(30);
-        //txt_toilet_time.setTextColor(more30Color); //text 색상 변경
-        //Intent intent1 = new Intent(TimespentintoiletActivity.this, activity_spentTimeInToiletMoreThan30.class);
-        //startActivity(intent1);
-        //finish();
+        Intent intent1 = new Intent(TimespentintoiletActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
+        startActivity(intent1);
+        finish();
 
         //화장실에 없는 경우 : 'enter'가 false
         //Intent intent3 = new Intent(activity_timespentintoilet.this, activity_notInToilet.class);

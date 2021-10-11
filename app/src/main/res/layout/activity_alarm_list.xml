@@ -21,34 +21,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.762" />
+
     <Button
         android:id="@+id/fallButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
         android:background="@drawable/button_background"
         android:fontFamily="@font/gmarketsansttflight"
         android:text="낙상사고"
         android:textColor="#FFF"
         app:backgroundTint="#F2CA50"
-        app:layout_constraintBottom_toTopOf="@+id/timeSpentInToiletButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
-    <Button
-        android:id="@+id/timeSpentInToiletButton"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="192dp"
-        android:background="@drawable/button_background"
-        android:fontFamily="@font/gmarketsansttflight"
-        android:text="TimeSpentInToilet"
-        android:textColor="#FFF"
-        app:backgroundTint="#F2CA50"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="384dp" />
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="76dp"

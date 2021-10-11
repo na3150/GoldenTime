@@ -1,5 +1,6 @@
 package com.example.probonoapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -21,7 +22,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class SpentTimeInToiletMoreThan60 extends AppCompatActivity {
+public class SpentTimeInToiletMoreThan_100Percent extends AppCompatActivity {
+
+    final private String TAG = "spenttimeintoiletmorethan100percent";
 
     boolean isAlarm = false; //default는 true로 한 뒤(현재는 일단 false로 해뒀습니다), 응급상황이 아니라는 버튼을 누르면 true로 변환
     int spentTime =0; //화장실에 머무른 시간
@@ -31,7 +34,7 @@ public class SpentTimeInToiletMoreThan60 extends AppCompatActivity {
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(SpentTimeInToiletMoreThan60.this, MenuActivity.class);
+        Intent intent = new Intent(SpentTimeInToiletMoreThan_100Percent.this, MenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
@@ -40,15 +43,16 @@ public class SpentTimeInToiletMoreThan60 extends AppCompatActivity {
     //사용자 정보 가져오기위한 참조
     private FirebaseUser user;
     private DatabaseReference reference ,ref;
-    private String userID;
+    private String userID, emergencyTime;
 
+    @SuppressLint("LongLogTag")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spent_timeintoilet_more_than60);
+        setContentView(R.layout.activity_spent_timeintoilet_more_than_100percent);
 
         final TextView getoldNameTextView = (TextView)findViewById(R.id.et_notify119);
-
+        final TextView tv_emergencyTime = (TextView)findViewById(R.id.et_toiletTime);
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("UserAccount");
         userID = user!= null? user.getUid() : null;
@@ -65,11 +69,14 @@ public class SpentTimeInToiletMoreThan60 extends AppCompatActivity {
                 OldBirth = dataSnapshot.child("노약자 생년월일").getValue(String.class);
                 OldLocate = dataSnapshot.child("노약자 자택주소").getValue(String.class);
                 phonenumber = dataSnapshot.child("보호자 전화번호").getValue(String.class);
+                tv_emergencyTime.setText(dataSnapshot.child("emergency_time").getValue(String.class)+"분");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+
+
 
         //응급상황이 아니라는 버튼을 눌렀을 때
         Button notEmergency = (Button)findViewById(R.id.buttonNotEmergency); //응급상황이 아니라는 버튼을 눌렀을 때
@@ -93,7 +100,7 @@ public class SpentTimeInToiletMoreThan60 extends AppCompatActivity {
                         isAlarm = false;
                         Toast.makeText(getApplicationContext(), "응급상황이 아닌것으로 확인되었습니다.", Toast.LENGTH_SHORT).show();
                         alertDialog.dismiss();
-                        Intent safeIntent = new Intent(SpentTimeInToiletMoreThan60.this, NotEmergency.class);
+                        Intent safeIntent = new Intent(SpentTimeInToiletMoreThan_100Percent.this, NotEmergency.class);
                         startActivity(safeIntent);
                         finish();
                     }

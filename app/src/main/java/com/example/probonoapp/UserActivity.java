@@ -1,14 +1,14 @@
 package com.example.probonoapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,8 +19,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
-
-import static com.google.firebase.auth.FirebaseAuth.getInstance;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -107,8 +105,6 @@ public class UserActivity extends AppCompatActivity {
                 result.put("노약자 생년월일", strBirth);
                 result.put("노약자 자택주소", strLocate);
                 result.put("보호자 전화번호", strPhonenumber);
-
-
 
                 //setValue : 데이터베이스에 삽입
                 mDatabaseRef.child("UserAccount").child(firebaseUser.getUid()).setValue(result);

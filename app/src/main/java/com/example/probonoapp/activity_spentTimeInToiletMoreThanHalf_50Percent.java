@@ -15,12 +15,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class activity_spentTimeInToiletMoreThan30 extends AppCompatActivity {
+public class activity_spentTimeInToiletMoreThanHalf_50Percent extends AppCompatActivity {
 
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(activity_spentTimeInToiletMoreThan30.this, MenuActivity.class);
+        Intent intent = new Intent(activity_spentTimeInToiletMoreThanHalf_50Percent.this, MenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();
@@ -30,11 +30,16 @@ public class activity_spentTimeInToiletMoreThan30 extends AppCompatActivity {
     private FirebaseUser user;
     private DatabaseReference reference ,ref;
     private String userID;
-    String oldName;
+    String oldName, emergencyTime;
+
+    TextView halfTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spent_time_in_toilet_more_than30);
+        setContentView(R.layout.activity_spent_time_in_toilet_more_than_50percent);
+
+        halfTime = (TextView) findViewById(R.id.et_toiletTime2);
 
         final TextView getoldNameTextView = (TextView)findViewById(R.id.textView25);
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -47,6 +52,8 @@ public class activity_spentTimeInToiletMoreThan30 extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 getoldNameTextView.setText("\'"+dataSnapshot.child("노약자 성함").getValue(String.class)+"\'님이 \n\n화장실에서 머무른 시간이");
+                emergencyTime = dataSnapshot.child("emergency_time").getValue(String.class);
+                halfTime.setText(Integer.toString(Integer.parseInt(emergencyTime)/2)+"분");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

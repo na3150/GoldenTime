@@ -34,7 +34,7 @@ public class NotEmergency extends AppCompatActivity { //노약자가 화장실�
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_not_in_toilet);
+        setContentView(R.layout.activity_not_emergency);
 
         final TextView getoldNameTextView = (TextView) findViewById(R.id.textView32);
         user = FirebaseAuth.getInstance().getCurrentUser();
