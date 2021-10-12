@@ -1,69 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
-
-    <FrameLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/main"
-                android:layout_width="match_parent"
-                android:layout_height="426dp"
-                android:layout_alignParentBottom="true"
-                android:layout_gravity="center"
-                android:layout_marginBottom="287dp"
-                android:src="@drawable/example2" />
-
-            <TextView
-                android:id="@+id/user_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginTop="575dp"
-                android:layout_marginBottom="175dp"
-                android:fontFamily="@font/gmarketsansttflight"
-                android:gravity="center"
-                android:text=" 노약자가 화장실에 \n\n❶ 30분 이상 머무른 경우(알림)        \n\n❷ 60분 이상 머무른 경우(알림+신고)\n\n 보호자 앱으로 📢알림과 팝업이 전송됩니다!"
-                android:textColor="#000"
-                android:textSize="13dp" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="92dp"
-                android:fontFamily="@font/gmarketsansttflight"
-                android:gravity="center"
-                android:text="60분 초과 후,\n 노약자가 응급상황이 아닌 것이 명확하다면,\n 빨간버튼을 눌러👇︎\n 자동신고가 되지 않도록 막을 수 있습니다."
-                android:textColor="#000"
-                android:textSize="13dp" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="23dp"
-                android:fontFamily="@font/gmarketsansttflight"
-                android:gravity="center"
-                android:text=" 5분간 응답이 없을 시❕❕\n 구조대에게 신고가 접수되어\n 회원가입 시 입력한 자택 주소로 \n🚑구조대가 출동합니다."
-                android:textColor="#000"
-                android:textSize="13dp" />
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
-        </RelativeLayout>
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="266dp"
+        android:layout_height="208dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/instructions_3" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:text="예시: 화장실 응급시간 = 60분"
+        android:textColor="#000"
+        android:textSize="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView20" />
 
-    </FrameLayout>
-
-</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:gravity="center"
+        android:text="회원가입 시 입력한 '화장실 응급시간'을 기준으로\n\n노약자의 화장실 이용시간이\n\n화장실 응급시간의 50%, 100%를 초과했을 때,\n\n앱으로 푸시 알림이 전송됩니다.\n\n\n⭐ 100%를 초과했을 때는 응급상황으로 간주합니다."
+        android:textColor="#000"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+</androidx.constraintlayout.widget.ConstraintLayout>

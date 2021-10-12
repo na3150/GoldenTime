@@ -30,7 +30,7 @@
         android:text=" ❶ 노약자가 변기 위에서 실신하는 경우🚽\n\n ❷ 노약자가 욕조에서 실신하는 경우🛀\n\n ❸ 적은 확률로 노약자의 낙상을 감지하지 못했을 경우\n\n ❹  그 외 안전바가 감지하지 못하는 응급 상황이 \n\n  발생하는 경우"
         android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="13dp"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 

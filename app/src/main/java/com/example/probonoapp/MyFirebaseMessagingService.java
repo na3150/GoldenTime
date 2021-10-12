@@ -103,20 +103,17 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             if (limitTime.equals(half_emergencyTime)) //50%일 때
             {
                 intent = new Intent(this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
-                intent.setAction(Intent.ACTION_MAIN);
-                intent.addCategory(Intent.CATEGORY_LAUNCHER);
                 contentText = "경고: 화장실 이용시간 "+ Integer.toString(halfeT)+ "분 초과";
             }
             else if (limitTime.equals(emergencyTime)){ //100%일 때
                 intent = new Intent(this, SpentTimeInToiletMoreThan_100Percent.class);
-                intent.setAction(Intent.ACTION_MAIN);
-                intent.addCategory(Intent.CATEGORY_LAUNCHER);
             }
             else if (click_action.equals("Emergency_getFall")){ //낙상사고 일때
                 intent = new Intent(this, Emergency_getFall.class);
-                intent.setAction(Intent.ACTION_MAIN);
-                intent.addCategory(Intent.CATEGORY_LAUNCHER);
             }
+
+            intent.setAction(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_LAUNCHER);
 
             NotificationManager notificationManager = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "10001");
@@ -129,17 +126,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     .setContentTitle(title)
                     .setContentText(contentText)
                     .setStyle(new NotificationCompat.BigTextStyle().bigText(message));
-            //특정 activity로 이동
             PendingIntent pendingIntent = PendingIntent.getActivity(this, notificationId, intent, PendingIntent.FLAG_CANCEL_CURRENT);
             builder.setContentIntent(pendingIntent);
-
-
 
 
             //알림 생성: 낙상,응급호출 버튼, time 50%,100%일 때만 알림 생성
             if (limitTime.equals("0")|| limitTime.equals(half_emergencyTime) || limitTime.equals(emergencyTime))
                 notificationManager.notify(notificationId, builder.build());
-
 
 
             //카운트 다운

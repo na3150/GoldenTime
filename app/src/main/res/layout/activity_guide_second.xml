@@ -1,73 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <FrameLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="210dp"
+        android:layout_height="300dp"
+        android:background="@drawable/button_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:backgroundTint="#000"
+            android:fontFamily="@font/gmarketsansttflight"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="노약자명'님의 안전이 우려됩니다.\n\n'노약자명'님이 응급상황버튼을\n\n누른 상태이니 안전을 확인해주세요"
+            android:textColor="#fff"
+            android:textSize="9dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/emergencybutton" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="426dp"
-                android:layout_above="@+id/user_text"
-                android:layout_below="@+id/main"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="-2dp"
-                android:layout_marginBottom="33dp"
-                android:src="@drawable/example1" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/gmarketsansttflight"
+            android:text="응급상황이 아니라면 아래의 버튼을 눌러주세요"
+            android:textColor="#000"
+            android:textSize="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView19"
+            app:layout_constraintVertical_bias="0.031" />
 
-            <TextView
-                android:id="@+id/user_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="213dp"
-                android:fontFamily="@font/gmarketsansttflight"
-                android:gravity="left"
-                android:text="  👷‍♀👷️'Golden Time' 을 통해,\n  노약자의 응급상황에 신속하게 대처할 수 있습니다. \n\n ❕다음과 같은 상황에 자동으로 응급호출됩니다."
-                android:textColor="#000"
-                android:textSize="13dp" />
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="160dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="#E10000"
+            android:fontFamily="@font/gmarketsansttflight"
+            android:gravity="center"
+            android:text="응급상황이 아닙니다."
+            android:textColor="#fff"
+            android:textSize="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintVertical_bias="0.031" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="80dp"
-                android:fontFamily="@font/gmarketsansttflight"
-                android:gravity="left"
-                android:text="  ❶ 노약자가 안전바의 응급호출 버튼을 누른 경우\n\n  ❷ 노약자의 낙상 사고가 감지된 경우\n\n  ❸ 노약자가 음성으로 도움을 요청한 경우\n\n  ❹ 노약자가 60분이상 화장실에 머무른 경우"
-                android:textColor="#000"
-                android:textSize="13dp"
-                android:textStyle="italic" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/gmarketsansttflight"
+            android:gravity="center"
+            android:text="5분 이내에 응답하지 않을 시\n\n자동으로 응급 신고가 접수됩니다."
+            android:textColor="#000"
+            android:textSize="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="36dp"
-                android:fontFamily="@font/gmarketsansttflight"
-                android:gravity="center"
-                android:text="⭐5분 이내로 보호자 응답없을 시 119신고 됩니다."
-                android:textColor="#000"
-                android:textSize="13dp" />
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="12dp"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:gravity="center"
+        android:text="다음과 같은 상황에 응급상황으로 판단합니다."
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
+    <TextView
+        android:id="@+id/textView27"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="12dp"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:text="❶ 노약자의 낙상사고가 감지된 경우\n\n❷ 노약자가 안전바의 응급호출 버튼을 누른경우\n\n❸ 화장실 이용시간이 화장실 응급시간을 초과한 경우"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
-        </RelativeLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12dp"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:text="응급상황 발생 후 5분이내에 응답하지 않을 시\n\n자동으로 119신고가 접수됩니다.\n\n응급상황이 아닌 것이 확인되면 \n\n⭐'응급상황이 아닙니다.'\n\n버튼을 눌러 신고를 막을 수 있습니다."
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView27" />
 
-
-    </FrameLayout>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
