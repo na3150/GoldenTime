@@ -96,6 +96,7 @@ public class UserActivity extends AppCompatActivity {
                 String strOldphonenumber = oldPhonenumberTextView.getText().toString().trim();
                 String strBirth = oldBirthTextView.getText().toString().trim();
 
+
                 HashMap<Object,String> result = new HashMap();
                 result.put("idToken",firebaseUser.getUid());
                 result.put("ID", ID);

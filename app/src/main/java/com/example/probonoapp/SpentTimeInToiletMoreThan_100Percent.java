@@ -2,6 +2,7 @@ package com.example.probonoapp;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -51,11 +52,18 @@ public class SpentTimeInToiletMoreThan_100Percent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spent_timeintoilet_more_than_100percent);
 
+
         final TextView getoldNameTextView = (TextView)findViewById(R.id.et_notify119);
         final TextView tv_emergencyTime = (TextView)findViewById(R.id.et_toiletTime);
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("UserAccount");
         userID = user!= null? user.getUid() : null;
+
+
+        //emergency_time 가져오기
+        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
+        emergencyTime = sharedPreferences.getString("emergency_time",""); //값 가져오기
+        tv_emergencyTime.setText(emergencyTime+"분");
 
         //노약자 성명(사용자 정보)가져오기 위한 snapshot
         reference.child(userID).addValueEventListener(new ValueEventListener() {
@@ -69,7 +77,6 @@ public class SpentTimeInToiletMoreThan_100Percent extends AppCompatActivity {
                 OldBirth = dataSnapshot.child("노약자 생년월일").getValue(String.class);
                 OldLocate = dataSnapshot.child("노약자 자택주소").getValue(String.class);
                 phonenumber = dataSnapshot.child("보호자 전화번호").getValue(String.class);
-                tv_emergencyTime.setText(dataSnapshot.child("emergency_time").getValue(String.class)+"분");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

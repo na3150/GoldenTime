@@ -1,6 +1,7 @@
 package com.example.probonoapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -30,7 +31,7 @@ public class activity_spentTimeInToiletMoreThanHalf_50Percent extends AppCompatA
     private FirebaseUser user;
     private DatabaseReference reference ,ref;
     private String userID;
-    String oldName, emergencyTime;
+    String oldName, half_emergencyTime;
 
     TextView halfTime;
 
@@ -40,6 +41,11 @@ public class activity_spentTimeInToiletMoreThanHalf_50Percent extends AppCompatA
         setContentView(R.layout.activity_spent_time_in_toilet_more_than_50percent);
 
         halfTime = (TextView) findViewById(R.id.et_toiletTime2);
+
+        //emergency_time 가져오기
+        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
+        half_emergencyTime = sharedPreferences.getString("half_emergency_time",""); //값 가져오기
+        halfTime.setText(half_emergencyTime+"분"); //textview 편집
 
         final TextView getoldNameTextView = (TextView)findViewById(R.id.textView25);
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -52,8 +58,6 @@ public class activity_spentTimeInToiletMoreThanHalf_50Percent extends AppCompatA
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 getoldNameTextView.setText("\'"+dataSnapshot.child("노약자 성함").getValue(String.class)+"\'님이 \n\n화장실에서 머무른 시간이");
-                emergencyTime = dataSnapshot.child("emergency_time").getValue(String.class);
-                halfTime.setText(Integer.toString(Integer.parseInt(emergencyTime)/2)+"분");
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

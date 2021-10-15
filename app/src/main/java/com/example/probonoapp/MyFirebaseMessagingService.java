@@ -7,53 +7,34 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.PowerManager;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
-    private FirebaseUser user;
-    private DatabaseReference reference;
-    private String userID;
-
     String emergencyTime, half_emergencyTime;
-    int eT, halfeT; //emergencyTime을 int로 변환
+    //int eT, halfeT; //emergencyTime을 int로 변환
 
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // ...
 
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("UserAccount");
-        userID = user != null ? user.getUid() : null;
+        //emergency_time 가져오기
+        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
+        emergencyTime = sharedPreferences.getString("emergency_time",""); //값 가져오기
+        half_emergencyTime = sharedPreferences.getString("half_emergency_time","");
 
-
-        //사용자 지정 응급 시간 가져오기기
-        reference.child(userID).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                emergencyTime = dataSnapshot.child("emergency_time").getValue(String.class);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-            }
-        });
+        Log.d(TAG, "emergencyTime: " + emergencyTime);
+        Log.d(TAG, "halfTime: " + half_emergencyTime);
 
         super.onMessageReceived(remoteMessage);
 
@@ -83,27 +64,25 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             int notificationId = 1;
             Context mContext = getApplicationContext();
 
-
-
             String title = remoteMessage.getData().get("title");
             String message = remoteMessage.getData().get("body");
             String click_action = remoteMessage.getData().get("click_action");
             String limitTime = remoteMessage.getData().get("time"); //data로 오는시간
             String contentText = "응급상황발생";
 
-            if (!limitTime.equals("0")) {
+            /*if (!limitTime.equals("0")) {
                 Log.d(TAG, "emergencyTime: " + emergencyTime);
                 halfeT = Integer.parseInt(emergencyTime) / 2; //50% 시간
                 Log.d(TAG, "halfTime: " + halfeT);
                 half_emergencyTime = Integer.toString(halfeT); //50%시간 문자열 변환
-            }
+            }*/
 
             Intent intent = new Intent(this,Push_emergency_button.class); //defualt: 응급 버튼
 
             if (limitTime.equals(half_emergencyTime)) //50%일 때
             {
                 intent = new Intent(this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
-                contentText = "경고: 화장실 이용시간 "+ Integer.toString(halfeT)+ "분 초과";
+                contentText = "경고: 화장실 이용시간 "+ half_emergencyTime + "분 초과";
             }
             else if (limitTime.equals(emergencyTime)){ //100%일 때
                 intent = new Intent(this, SpentTimeInToiletMoreThan_100Percent.class);

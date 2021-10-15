@@ -1,6 +1,7 @@
 package com.example.probonoapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
     private String emergency ="0";
     String strGender = " "; //노약자 성별
     String strEmergency_time = " "; //60,90,120 중 노약자가 위험상황이라고 판단한 시간
+    String strHalfEmergency_time = " "; //50% 시간
     RadioGroup getGender, getEmergency_time;
     RadioButton radio_women, radio_men, radio_sixty, radio_ninety, radio_hundred_twenty;
 
@@ -62,7 +64,6 @@ public class RegisterActivity extends AppCompatActivity {
         mETPhonenumber = (EditText)findViewById(R.id.et_phonenumber);
         mEtBirth = (EditText)findViewById(R.id.et_birth); //노약자 생년월일
         mBtnRegister = (Button)findViewById(R.id.btn_register);
-
 
 
 
@@ -163,6 +164,15 @@ public class RegisterActivity extends AppCompatActivity {
                             result.put("보호자 전화번호", strPhonenumber);
                             result.put("emergency",emergency);
                             result.put("emergency_time", strEmergency_time);
+
+                            strHalfEmergency_time = Integer.toString(Integer.parseInt(strEmergency_time)/2);
+
+                            //sharedPreferences에 emergencyTime 저장 -> 앱이 꺼져도 유지되도록
+                            SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정
+                            SharedPreferences.Editor editor= sharedPreferences.edit(); //sharedPreferences를 제어할 editor를 선언
+                            editor.putString("emergency_time", strEmergency_time); // key,value 형식으로 저장
+                            editor.putString("half_emergency_time",strHalfEmergency_time);
+                            editor.commit();
 
 
                             //setValue : 데이터베이스에 삽입
