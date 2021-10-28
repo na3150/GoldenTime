@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="97dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/et_email"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.513"
+                app:srcCompat="@drawable/logoclock" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="회원가입"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gmarketsansttfmedium"
+                android:gravity="center"
+                android:textColor="#000"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="꙳표시된 곳은 모두 입력해주세요"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:textColor="#000"
+                android:textSize="10dp"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/button_background"
+                android:backgroundTint="#F2CA50"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:gravity="center"
+                android:text="노약자 정보"
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/gmarketsansmedium"
+                android:text="  노약자 이름 ꙳"
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <EditText
+                android:id="@+id/et_oldName"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:hint="  예) 홍길동"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gmarketsansmedium"
+                android:text="  노약자 성별 ꙳"
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <RadioGroup
+                android:id="@+id/get_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="left"
+                >
+
+                <RadioButton
+                    android:id="@+id/radio_women"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:button="@null"
+                    android:background="@drawable/selector_radio_button"
+                    android:fontFamily="@font/gmarketsansttflight"
+                    android:text="여자"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/selector_radio_text"
+                    android:textSize="13dp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radio_men"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/gmarketsansttflight"
+                    android:background="@drawable/selector_radio_button"
+                    android:textColor="@drawable/selector_radio_text"
+                    android:button="@null"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="13dp"
+                    android:text="남자" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gmarketsansmedium"
+                android:text="  노약자 생년월일 ꙳"
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <EditText
+                android:id="@+id/et_birth"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:hint="  예) 19340130"
+                android:inputType="textLongMessage"
+                android:padding="10dp"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gmarketsansmedium"
+                android:text="  노약자 자택주소 ꙳"
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <EditText
+                android:id="@+id/et_locate"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:hint="  상세 주소 작성"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gmarketsansmedium"
+                android:text="  노약자 전화번호"
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <EditText
+                android:id="@+id/et_oldPhonenumber"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:hint="  예) 01012345678"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gmarketsansmedium"
+                android:text="  노약자 화장실 응급시간 ꙳"
+                android:textColor="#000"
+                android:textSize="13dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text= "화장실에 머무른 시간이 해당 시간을 초과했을 때, 응급신고가 접수됩니다."
+                android:fontFamily="@font/gmarketsansttflight"
+                android:textColor="#000"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textSize="7dp"/>
+
+            <RadioGroup
+                android:id="@+id/get_emergency_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="left"
+                >
+
+                <RadioButton
+                    android:id="@+id/radio_sixty"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="50dp"
+                    android:button="@null"
+                    android:background="@drawable/selector_radio_button"
+                    android:fontFamily="@font/gmarketsansttflight"
+                    android:text="60분"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/selector_radio_text"
+                    android:textSize="13dp"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radio_ninety"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/gmarketsansttflight"
+                    android:background="@drawable/selector_radio_button"
+                    android:textColor="@drawable/selector_radio_text"
+                    android:button="@null"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="13dp"
+                    android:text="90분" />
+
+                <RadioButton
+                    android:id="@+id/radio_hundred_twenty"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/gmarketsansttflight"
+                    android:background="@drawable/selector_radio_button"
+                    android:textColor="@drawable/selector_radio_text"
+                    android:button="@null"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:textSize="13dp"
+                    android:text="120분" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="180dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/button_background"
+                android:backgroundTint="#F2CA50"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:gravity="center"
+                android:text="보호자 입력"
+                android:textColor="#000"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/gmarketsansmedium"
+                android:text="  보호자 전화번호 ꙳"
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <EditText
+                android:id="@+id/et_phonenumber"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:hint="  예) 01012345678"
+                android:inputType="textLongMessage"
+                android:padding="10dp"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gmarketsansmedium"
+                android:text="  아이디(이메일) ꙳"
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/border"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:hint="  아이디를 입력하세요"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gmarketsansmedium"
+                android:text="  비밀번호(6자 이상) ꙳"
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:hint="  비밀번호를 입력하세요(6자 이상)"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="230dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gmarketsansmedium"
+                android:text="  비밀번호 확인 ꙳"
+                android:textColor="#000"
+                android:textSize="13dp" />
+
+            <EditText
+                android:id="@+id/et_pwd2"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/border"
+                android:ems="10"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:hint="  비밀번호 확인"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:gravity="center"
+                android:text="개인정보 수집 및 응급상황 발생 시\n\n자동 신고 및 호출이 진행됩니다. \n\n응급상황을 위한 개인정보 수집에 동의하십니까?"
+                android:textColor="#000"
+                android:textSize="14dp" />
+
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/button_background"
+                android:fontFamily="@font/gmarketsansttflight"
+                android:text="동의 후 가입"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#fff"
+                android:textSize="15dp"
+                app:backgroundTint="#000"
+                app:iconPadding="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

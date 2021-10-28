@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="71dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="#F2CA50"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:gravity="center"
+        android:text="응급상황 알림목록"
+        android:textColor="#000"
+        android:textSize="11dp" />
+
+    <TextView
+        android:layout_width="220dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="69dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="#F2CA50"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:gravity="center"
+        android:text="화장실 이용 시간"
+        android:textColor="#000"
+        android:textSize="11dp" />
+
+    <TextView
+        android:id="@+id/user_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="31dp"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:gravity="center"
+        android:text="[안전바 응급호출 도우미]\n\n Golden Time에는 \n\n크게 2가지 중요한 기능이 있습니다."
+        android:textColor="#000"
+        android:textSize="14dp" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="95dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:gravity="left"
+        android:text="   ☝  응급상황 알림 \n\n   ✌  화장실 이용시간(Time Spent In Toilet) "
+        android:textColor="#000" />
+
+</LinearLayout>
