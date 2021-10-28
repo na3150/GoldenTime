@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bf1040e9-799a-414b-bd4f-b787fa9d9978" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/google-services.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/icon_goldenTime-playstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/BluetoothLeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/DeviceControlActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/DeviceScanActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/LoadingActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/LoginActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/MyFirebaseMessagingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/PersistentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/RestartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/SampleGattAttributes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/ServiceThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activitiy_spentTimeIntoiletLessThan30.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_alarmList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_completealarm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_emergency.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_introduce.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_notInToilet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_notify119.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_pushedEmergencyButton.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_register.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_signcomplete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_spentTimeInToiletMoreThan30.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_timespentintoilet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/activity_user.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/guide_first.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/guide_fourth.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/guide_second.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/guide_third.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/example/probonoapp/sendMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable-v24/user_toilet.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable-v24/user_toilet_down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable-v24/user_toilet_up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/black_radius.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/border.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/check.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/completeimage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/emergency.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/emergency_complete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/emergencybutton.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/example1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/example2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/goldentimelogo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/icon_goldentime_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/info.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/infoimage.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/introduce.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/introduce1.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/logoclock.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/notintoilet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/registered.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/selector_radio_button.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/selector_radio_text.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/drawable/tile.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/font/app_font.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/font/app_timetoiletfont.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/font/gmarketsansmedium.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/font/gmarketsansttfbold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/font/gmarketsansttflight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/font/gmarketsansttfmedium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/font/tttogether.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/actionbar_indeterminate_progress.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_account.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_activitiy_spent_time_intoilet_less_than30.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_alarm_list.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_ble.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_completealarm.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_emergency.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_guide_first.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_guide_fourth.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_guide_second.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_guide_third.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_introduce.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_loading.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_not_in_toilet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_notify119.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_pushed_emergency_button.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_register.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_signcomplete.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_spent_time_in_toilet_more_than30.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_timespentintoilet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_user.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/gatt_services_characteristics.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/listitem_device.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/menu/gatt_services.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/menu/main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-anydpi-v26/icon_goldentime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-anydpi-v26/icon_goldentime_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-hdpi/icon_goldentime.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-hdpi/icon_goldentime_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-hdpi/icon_goldentime_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-mdpi/icon_goldentime.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-mdpi/icon_goldentime_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-mdpi/icon_goldentime_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xhdpi/icon_goldentime.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xhdpi/icon_goldentime_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xhdpi/icon_goldentime_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxhdpi/icon_goldentime.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxhdpi/icon_goldentime_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxhdpi/icon_goldentime_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/icon_goldentime.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/icon_goldentime_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/mipmap-xxxhdpi/icon_goldentime_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/icon_goldentime_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/template-dimens.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/template-styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hs_err_pid22524.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../replay_pid22524.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\USER\.android\avd\Pixel_API_30.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="209RrzB9XWD0yz9jlhWtl1JiWoV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="ProbonoApp.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf1040e9-799a-414b-bd4f-b787fa9d9978" name="Default Changelist" comment="" />
+      <created>1635455021569</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635455021569</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
