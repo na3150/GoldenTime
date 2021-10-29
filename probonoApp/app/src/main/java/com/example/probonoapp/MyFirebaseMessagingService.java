@@ -26,7 +26,6 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        // ...
 
         //emergency_time 가져오기
         SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정, 만약 test key값이 있다면 해당 값을 불러옴.
@@ -66,6 +65,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);
 
+            boolean getfall_emergency = sharedPreferences.getBoolean("fall_emergency",true);
+            boolean pushbutton_emergency = sharedPreferences.getBoolean("button_emergency",true);
+            boolean time50_emergency = sharedPreferences.getBoolean("50%time_emergency",true);
+            boolean time100_emergency = sharedPreferences.getBoolean("100%time_emergency",true);
+
             String title = remoteMessage.getData().get("title");
             String message = remoteMessage.getData().get("body");
             String click_action = remoteMessage.getData().get("click_action");
@@ -93,6 +97,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             else{ //defualt인 응급상황 버튼을 누른경우
                 sharedPreferences.edit().putBoolean("button_emergency",true).apply(); //응급호출 버튼 응급상황 -> true로 변경
             }
+
+
+            //Log로 값 확인
+            Log.d(TAG, "fall_emergency = "+ getfall_emergency);
+            Log.d(TAG, "button_emergency = "+ pushbutton_emergency);
+            Log.d(TAG, "50%time_emergency = "+ time50_emergency);
+            Log.d(TAG, "100%time_emergency = "+ time100_emergency);
 
             intent.setAction(Intent.ACTION_MAIN);
             intent.addCategory(Intent.CATEGORY_LAUNCHER);
