@@ -1,6 +1,7 @@
 package com.example.probonoapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -29,9 +30,24 @@ public class TimespentintoiletActivity extends AppCompatActivity {
         txt_toilet_time = (TextView) findViewById(R.id.et_toiletTime2);
 
         //화장실에 머무른 시간이 100% 초과됐을 때 (현재는 default) if(time> = 60)
-        Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThan_100Percent.class);
-        startActivity(intent);
-        finish();
+        //Intent intent = new Intent(TimespentintoiletActivity.this, NotEmergencyActivity.class);
+        //startActivity(intent);
+        //finish();
+
+        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);
+
+        if(sharedPreferences.getBoolean("50%time_emergency",true)) {
+            Intent intent = new Intent(TimespentintoiletActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
+            startActivity(intent);
+        }
+        else if(sharedPreferences.getBoolean("100%time_emergency",true)) {
+            Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThan_100Percent.class);
+            startActivity(intent);
+        }
+        else{
+            Intent intent = new Intent(TimespentintoiletActivity.this,NotEmergencyActivity.class);
+            startActivity(intent);
+        }
 
         //화장실이 머무른 시간이 50% 초과되었을 때
         //Intent intent1 = new Intent(TimespentintoiletActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);

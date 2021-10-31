@@ -109,6 +109,9 @@ public class Push_emergency_button extends AppCompatActivity {
                             isAlarm = false;
                             Toast.makeText(getApplicationContext(), "응급상황이 아닌것으로 확인되었습니다.", Toast.LENGTH_SHORT).show();
                             alertDialog.dismiss();
+                            Intent safeIntent = new Intent(Push_emergency_button.this, NotEmergencyActivity.class);
+                            startActivity(safeIntent);
+                            finish();
                         }
                     });
                     Button cancle_btn = dialogView.findViewById(R.id.noBtn);

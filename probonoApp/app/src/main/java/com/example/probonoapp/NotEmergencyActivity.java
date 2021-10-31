@@ -1,6 +1,7 @@
 package com.example.probonoapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -40,6 +41,12 @@ public class NotEmergencyActivity extends AppCompatActivity { //노약자가 화
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("UserAccount");
         userID = user != null ? user.getUid() : null;
+
+        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);
+        sharedPreferences.edit().putBoolean("50%time_emergency",false).apply();
+        sharedPreferences.edit().putBoolean("100%time_emergency",false).apply();
+        sharedPreferences.edit().putBoolean("fall_emergency",false).apply();
+        sharedPreferences.edit().putBoolean("button_emergency",false).apply();
 
         reference.child(userID).addValueEventListener(new ValueEventListener() {
 

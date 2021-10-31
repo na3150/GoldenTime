@@ -3,7 +3,9 @@ package com.example.probonoapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.RemoteMessage;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -22,9 +25,13 @@ public class MenuActivity extends AppCompatActivity {
     Button buttonToilet; //TimeSpentInToilet 버튼
     Button buttonAlarmList; ////응급상황 알림목록 버튼
     Button buttonble; ////블루투스 버튼
+    String emergencyTime, half_emergencyTime;
 
     private static final String TAG = "activity_menu";
     private BackKeyClickHandler backKeyClickHandler;
+
+
+
 
 
     @Override
@@ -90,6 +97,8 @@ public class MenuActivity extends AppCompatActivity {
             }
         }));
 
+        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);
+
         buttonToilet = (Button)findViewById(R.id.buttonToilet); //TimeSpentInToilet 버튼을 눌렀을 때
         buttonToilet.setOnClickListener((new View.OnClickListener() {
             @Override
@@ -104,8 +113,26 @@ public class MenuActivity extends AppCompatActivity {
         buttonAlarmList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent5 = new Intent(MenuActivity.this, AlarmList.class);
-                startActivity(intent5);
+                if(sharedPreferences.getBoolean("fall_emergency",true)) {
+                    Intent intent = new Intent(MenuActivity.this, Emergency_getFall.class);
+                    startActivity(intent);
+                }
+                else if(sharedPreferences.getBoolean("button_emergency",true)) {
+                    Intent intent = new Intent(MenuActivity.this, Push_emergency_button.class);
+                    startActivity(intent);
+                }
+                else if(sharedPreferences.getBoolean("50%time_emergency",true)) {
+                    Intent intent = new Intent(MenuActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
+                    startActivity(intent);
+                }
+                else if(sharedPreferences.getBoolean("100%time_emergency",true)) {
+                    Intent intent = new Intent(MenuActivity.this, SpentTimeInToiletMoreThan_100Percent.class);
+                    startActivity(intent);
+                }
+                else{
+                    Intent intent = new Intent(MenuActivity.this,NotEmergencyActivity.class);
+                    startActivity(intent);
+                }
                 finish();
             }
         });
