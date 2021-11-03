@@ -110,7 +110,7 @@ public class MenuActivity extends AppCompatActivity {
         buttonAlarmList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (sharedPreferences.getBoolean("alarmComplete",false)){ //응급신고가 완료되었을 때
+                if (sharedPreferences.getBoolean("alarmComplete",true)){ //응급신고가 완료되었을 때
                     Intent intent = new Intent(MenuActivity.this,CompleteAlarmActivity.class);
                     startActivity(intent);
                 }

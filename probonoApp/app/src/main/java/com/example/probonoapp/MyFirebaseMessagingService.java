@@ -89,9 +89,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             else if (click_action.equals("Emergency_getFall")){ //낙상사고 일때
                 intent = new Intent(this, Emergency_getFall.class);
                 sharedPreferences.edit().putBoolean("fall_emergency",true).apply(); //낙상 응급상황 -> true로 변경
+                boolean is_fallEmergency = sharedPreferences.getBoolean("fall_emergency",true);
+                Log.d(TAG,"is_fallemergency = "+ is_fallEmergency);
             }
             else{ //defualt인 응급상황 버튼을 누른경우
                 sharedPreferences.edit().putBoolean("button_emergency",true).apply(); //응급호출 버튼 응급상황 -> true로 변경
+                boolean is_buttonemergency = sharedPreferences.getBoolean("button_emergency",true);
+                Log.d(TAG,"is_buttonemergency = "+ is_buttonemergency);
             }
 
             intent.setAction(Intent.ACTION_MAIN);

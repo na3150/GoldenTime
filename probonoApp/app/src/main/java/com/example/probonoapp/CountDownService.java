@@ -63,9 +63,11 @@ public class CountDownService extends Service { //응급신고 발생 후 5분 �
 
             @Override
             public void onFinish() {
-                makeSendMessage();
                 Log.e(TAG, "onFinish: ");
+                if(isWantAlarm()){ //"응급상황이 아닙니다"버튼을 누르지 않았으면 신고
+                makeSendMessage();
                 createCompleteAlarm();
+                }
             }
         }.start();
         return START_STICKY;
@@ -131,5 +133,16 @@ public class CountDownService extends Service { //응급신고 발생 후 5분 �
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+    }
+
+    //사용자가 '응급상황이 아닙니다' 버튼을 눌렀는지 확인(응급신고를 원하는지), true이면 신고
+    private Boolean isWantAlarm(){
+        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+        //하나라도 응급상황이면 응급신고
+        if (sharedPreferences.getBoolean("fall_emergency",false)) return true;
+        else if (sharedPreferences.getBoolean("button_emergency",false)) return true;
+        else if (sharedPreferences.getBoolean("100%time_emergency",false)) return true;
+        return false; //어떤 응급상황도 해당되지 않는 경우
     }
 }
