@@ -42,11 +42,13 @@ public class NotEmergencyActivity extends AppCompatActivity { //노약자가 화
         reference = FirebaseDatabase.getInstance().getReference("UserAccount");
         userID = user != null ? user.getUid() : null;
 
+        //모든 응급상황 초기화
         SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);
         sharedPreferences.edit().putBoolean("50%time_emergency",false).apply();
         sharedPreferences.edit().putBoolean("100%time_emergency",false).apply();
         sharedPreferences.edit().putBoolean("fall_emergency",false).apply();
         sharedPreferences.edit().putBoolean("button_emergency",false).apply();
+        sharedPreferences.edit().putBoolean("alarmComplete",false).apply();
 
         reference.child(userID).addValueEventListener(new ValueEventListener() {
 

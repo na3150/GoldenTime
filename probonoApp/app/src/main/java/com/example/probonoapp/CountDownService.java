@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.IBinder;
@@ -53,7 +54,7 @@ public class CountDownService extends Service { //응급신고 발생 후 5분 �
             return START_NOT_STICKY;
         }
 
-        CountDownTimer countDownTimer = new CountDownTimer(300000,1000) { //5분 카운트 다운 : test로 10초
+        CountDownTimer countDownTimer = new CountDownTimer(300000,1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 getData();
@@ -88,6 +89,11 @@ public class CountDownService extends Service { //응급신고 발생 후 5분 �
         Intent intent = new Intent(this, CompleteAlarmActivity.class);
         intent.setAction(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);    // test 이름의 기본모드 설정
+        SharedPreferences.Editor editor= sharedPreferences.edit(); //sharedPreferences를 제어할 editor를 선언
+        //카운트다운 끝났을 때 sharedPreferences로 응급상황 완료되었음을 저장
+        editor.putBoolean("alarmComplete", true);
+        editor.commit();
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default");
 

@@ -177,7 +177,7 @@ public class RegisterActivity extends AppCompatActivity {
                             editor.putBoolean("button_emergency",false); //응급호출 버튼 응급상황
                             editor.putBoolean("50%time_emergency",false); //화장실 응급시간 50% 초과
                             editor.putBoolean("100%time_emergency",false); //100% 초과
-
+                            editor.putBoolean("alarmComplete", false); //응급신고 완료 여부
                             editor.commit();
 
 

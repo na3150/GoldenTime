@@ -31,9 +31,6 @@ public class MenuActivity extends AppCompatActivity {
     private BackKeyClickHandler backKeyClickHandler;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,7 +110,11 @@ public class MenuActivity extends AppCompatActivity {
         buttonAlarmList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(sharedPreferences.getBoolean("fall_emergency",true)) {
+                if (sharedPreferences.getBoolean("alarmComplete",false)){ //응급신고가 완료되었을 때
+                    Intent intent = new Intent(MenuActivity.this,CompleteAlarmActivity.class);
+                    startActivity(intent);
+                }
+                else if(sharedPreferences.getBoolean("fall_emergency",true)) {
                     Intent intent = new Intent(MenuActivity.this, Emergency_getFall.class);
                     startActivity(intent);
                 }
@@ -121,12 +122,12 @@ public class MenuActivity extends AppCompatActivity {
                     Intent intent = new Intent(MenuActivity.this, Push_emergency_button.class);
                     startActivity(intent);
                 }
-                else if(sharedPreferences.getBoolean("50%time_emergency",true)) {
-                    Intent intent = new Intent(MenuActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
-                    startActivity(intent);
-                }
                 else if(sharedPreferences.getBoolean("100%time_emergency",true)) {
                     Intent intent = new Intent(MenuActivity.this, SpentTimeInToiletMoreThan_100Percent.class);
+                    startActivity(intent);
+                }
+                else if(sharedPreferences.getBoolean("50%time_emergency",true)) {
+                    Intent intent = new Intent(MenuActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
                     startActivity(intent);
                 }
                 else{

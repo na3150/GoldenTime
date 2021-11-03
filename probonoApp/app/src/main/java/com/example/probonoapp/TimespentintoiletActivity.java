@@ -36,13 +36,17 @@ public class TimespentintoiletActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);
 
+        if (sharedPreferences.getBoolean("alarmComplete",true)){ //응급신고가 완료되었을 때, 값이 없으면 false 불러옴
+            Intent intent = new Intent(TimespentintoiletActivity.this,CompleteAlarmActivity.class);
+            startActivity(intent);
+        }
         //50%도 true, 100%일 때도 true이면 100%로 이동하도록
-        if(sharedPreferences.getBoolean("100%time_emergency",true)) {
-            Intent intent = new Intent(TimespentintoiletActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
+        else if(sharedPreferences.getBoolean("100%time_emergency",true)) {
+            Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThan_100Percent.class);
             startActivity(intent);
         }//50%만 true일 때
         else if(sharedPreferences.getBoolean("50%time_emergency",true)) {
-            Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThan_100Percent.class);
+            Intent intent = new Intent(TimespentintoiletActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
             startActivity(intent);
         }
         else{
