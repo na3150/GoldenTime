@@ -36,11 +36,12 @@ public class TimespentintoiletActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);
 
-        if(sharedPreferences.getBoolean("50%time_emergency",true)) {
+        //50%도 true, 100%일 때도 true이면 100%로 이동하도록
+        if(sharedPreferences.getBoolean("100%time_emergency",true)) {
             Intent intent = new Intent(TimespentintoiletActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
             startActivity(intent);
-        }
-        else if(sharedPreferences.getBoolean("100%time_emergency",true)) {
+        }//50%만 true일 때
+        else if(sharedPreferences.getBoolean("50%time_emergency",true)) {
             Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThan_100Percent.class);
             startActivity(intent);
         }
@@ -49,15 +50,6 @@ public class TimespentintoiletActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        //화장실이 머무른 시간이 50% 초과되었을 때
-        //Intent intent1 = new Intent(TimespentintoiletActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
-        //startActivity(intent1);
-        //finish();
-
-        //화장실에 없는 경우 : 'enter'가 false
-        //Intent intent3 = new Intent(activity_timespentintoilet.this, activity_notInToilet.class);
-        //startActivity(intent3);
-        //finish();
     }
 
 

@@ -27,7 +27,7 @@ public class Push_emergency_button extends AppCompatActivity {
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(Push_emergency_button.this, AlarmList.class);
+        Intent intent = new Intent(Push_emergency_button.this, MenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();

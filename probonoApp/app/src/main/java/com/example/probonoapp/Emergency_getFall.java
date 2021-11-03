@@ -32,7 +32,7 @@ public class Emergency_getFall extends AppCompatActivity {
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(Emergency_getFall.this, AlarmList.class);
+        Intent intent = new Intent(Emergency_getFall.this, MenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();

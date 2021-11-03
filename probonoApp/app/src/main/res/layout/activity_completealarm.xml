@@ -60,7 +60,7 @@
         android:layout_marginTop="28dp"
         android:fontFamily="@font/gmarketsansttflight"
         android:gravity="center"
-        android:text="119구조대원이 10분 이내로\n\n도착 예정입니다."
+        android:text="119구조대원이 몇 분 이내로\n\n도착 예정입니다."
         android:textColor="#C1E10626"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
