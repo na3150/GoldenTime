@@ -4,10 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NotEmergencyActivity">
+    tools:context=".NotEmergency_toilet">
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/imageView22"
+        android:layout_width="112dp"
+        android:layout_height="94dp"
+        android:layout_marginBottom="416dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView21"
+        app:srcCompat="@drawable/notintoilet" />
+
+    <ImageView
+        android:id="@+id/imageView21"
         android:layout_width="65dp"
         android:layout_height="54dp"
         android:layout_marginTop="40dp"
@@ -17,32 +29,23 @@
         app:srcCompat="@drawable/logoclock" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/textView28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
-        android:backgroundTint="#F2CA50"
-        android:layout_marginTop="30dp"
         android:fontFamily="@font/gmarketsansttflight"
         android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="#F2CA50"
         android:padding="20dp"
-        android:text="TextView"
-        android:textColor="#000"
         android:textSize="13dp"
+        android:text="화장실을 이용중이지 않거나,\n\n화장실 응급시간을 초과하지 않았습니다."
+        android:textColor="#000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView22"
+        app:layout_constraintVertical_bias="0.142" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="112dp"
-        android:layout_height="94dp"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11"
-        app:layout_constraintVertical_bias="0.298"
-        app:srcCompat="@drawable/notintoilet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

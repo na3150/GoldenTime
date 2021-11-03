@@ -122,14 +122,6 @@ public class MenuActivity extends AppCompatActivity {
                     Intent intent = new Intent(MenuActivity.this, Push_emergency_button.class);
                     startActivity(intent);
                 }
-                else if(sharedPreferences.getBoolean("100%time_emergency",true)) {
-                    Intent intent = new Intent(MenuActivity.this, SpentTimeInToiletMoreThan_100Percent.class);
-                    startActivity(intent);
-                }
-                else if(sharedPreferences.getBoolean("50%time_emergency",true)) {
-                    Intent intent = new Intent(MenuActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
-                    startActivity(intent);
-                }
                 else{
                     Intent intent = new Intent(MenuActivity.this,NotEmergencyActivity.class);
                     startActivity(intent);

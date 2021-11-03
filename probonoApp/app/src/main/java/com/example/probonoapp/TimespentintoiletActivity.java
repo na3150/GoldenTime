@@ -40,7 +40,7 @@ public class TimespentintoiletActivity extends AppCompatActivity {
             startActivity(intent);
         }
         else{
-            Intent intent = new Intent(TimespentintoiletActivity.this,NotEmergencyActivity.class);
+            Intent intent = new Intent(TimespentintoiletActivity.this,NotEmergency_toilet.class);
             startActivity(intent);
         }
 

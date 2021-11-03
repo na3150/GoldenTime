@@ -29,6 +29,9 @@
         android:roundIcon="@mipmap/icon_goldentime_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProbonoApp">
+        <activity
+            android:name=".NotEmergency_toilet"
+            android:exported="true" />
 
         <service
             android:name=".MyFirebaseMessagingService"

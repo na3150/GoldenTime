@@ -42,10 +42,8 @@ public class NotEmergencyActivity extends AppCompatActivity { //노약자가 화
         reference = FirebaseDatabase.getInstance().getReference("UserAccount");
         userID = user != null ? user.getUid() : null;
 
-        //모든 응급상황 초기화
+        //낙상, 응급호출 버튼 응급상황 초기화
         SharedPreferences sharedPreferences= getSharedPreferences("test", MODE_PRIVATE);
-        sharedPreferences.edit().putBoolean("50%time_emergency",false).apply();
-        sharedPreferences.edit().putBoolean("100%time_emergency",false).apply();
         sharedPreferences.edit().putBoolean("fall_emergency",false).apply();
         sharedPreferences.edit().putBoolean("button_emergency",false).apply();
         sharedPreferences.edit().putBoolean("alarmComplete",false).apply();
@@ -55,7 +53,7 @@ public class NotEmergencyActivity extends AppCompatActivity { //노약자가 화
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                getoldNameTextView.setText("\'" + dataSnapshot.child("노약자 성함").getValue(String.class) + "\'님은 안전합니다.");
+                getoldNameTextView.setText("\'" + dataSnapshot.child("노약자 성함").getValue(String.class) + "\'님은 안전합니다.\n\n응급호출 버튼, 낙상사고가 \n\n감지되지 않았습니다.");
             }
 
             @Override
