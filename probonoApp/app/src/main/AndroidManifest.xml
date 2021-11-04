@@ -61,7 +61,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".NotEmergencyActivity" />
-        <activity android:name=".activity_spentTimeInToiletMoreThanHalf_50Percent">
+        <activity android:name=".SpentTimeInToiletMoreThanHalf_50Percent">
             <intent-filter>
                 <action android:name="com.example.probonoApp_30minute_notification_action" />
 

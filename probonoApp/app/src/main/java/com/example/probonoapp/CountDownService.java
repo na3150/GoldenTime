@@ -1,5 +1,6 @@
 package com.example.probonoapp;
 
+import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -10,6 +11,7 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.CountDownTimer;
 import android.os.IBinder;
+import android.os.PowerManager;
 import android.telephony.SmsManager;
 import android.util.Log;
 
@@ -105,6 +107,12 @@ public class CountDownService extends Service { //응급신고 발생 후 5분 �
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 1, intent, PendingIntent.FLAG_CANCEL_CURRENT);
         builder.setContentIntent(pendingIntent);
+
+        //화면 깨우기
+        PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE );
+        @SuppressLint("InvalidWakeLockTag") PowerManager.WakeLock wakeLock = pm.newWakeLock( PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "TAG" );
+        wakeLock.acquire(3000);
+
         // 알림 표시
         NotificationManager notificationManager = (NotificationManager) this.getSystemService(Context.NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
