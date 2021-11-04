@@ -36,7 +36,7 @@ public class TimespentintoiletActivity extends AppCompatActivity {
             startActivity(intent);
         }//50%만 true일 때
         else if(sharedPreferences.getBoolean("50%time_emergency",true)) {
-            Intent intent = new Intent(TimespentintoiletActivity.this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
+            Intent intent = new Intent(TimespentintoiletActivity.this, SpentTimeInToiletMoreThanHalf_50Percent.class);
             startActivity(intent);
         }
         else{

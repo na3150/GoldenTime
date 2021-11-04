@@ -16,12 +16,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class activity_spentTimeInToiletMoreThanHalf_50Percent extends AppCompatActivity {
+public class SpentTimeInToiletMoreThanHalf_50Percent extends AppCompatActivity {
 
     @Override
     public void onBackPressed() { //뒤로가기
         super.onBackPressed();
-        Intent intent = new Intent(activity_spentTimeInToiletMoreThanHalf_50Percent.this, MenuActivity.class);
+        Intent intent = new Intent(SpentTimeInToiletMoreThanHalf_50Percent.this, MenuActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
         finish();

@@ -77,7 +77,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             if (limitTime.equals(half_emergencyTime)) //50%일 때
             {
-                intent = new Intent(this, activity_spentTimeInToiletMoreThanHalf_50Percent.class);
+                intent = new Intent(this, SpentTimeInToiletMoreThanHalf_50Percent.class);
                 contentText = "경고: 화장실 이용시간 "+ half_emergencyTime + "분 초과";
                 //50% 상황을 sharedPreferences에 저장·수정
                 sharedPreferences.edit().putBoolean("50%time_emergency",true).apply(); //화장실 응급시간 50% 초과 -> true로 변경

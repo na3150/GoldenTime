@@ -67,4 +67,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_getOldName" />
 
+    <Button
+        android:id="@+id/buttonSolved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:backgroundTint="#F2CA50"
+        android:fontFamily="@font/gmarketsansttflight"
+        android:text="해결완료"
+        android:textColor="#000"
+        android:textSize="12dp"
+        android:layout_marginTop="50dp"
+        app:backgroundTint="#F2CA50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_completealarm.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/actionbar_indeterminate_progress.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_completealarm.xml" value="0.264" />
         <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_not_emergency.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_not_emergency_toilet.xml" value="0.264" />
         <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_register.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/activity_user.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/USER/Desktop/probonoApp/app/src/main/res/layout/alertdialog.xml" value="0.264" />
       </map>
     </option>
   </component>

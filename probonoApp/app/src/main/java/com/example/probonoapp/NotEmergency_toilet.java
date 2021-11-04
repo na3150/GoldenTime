@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 
 public class NotEmergency_toilet extends AppCompatActivity {
 
@@ -27,5 +28,6 @@ public class NotEmergency_toilet extends AppCompatActivity {
         sharedPreferences.edit().putBoolean("50%time_emergency",false).apply();
         sharedPreferences.edit().putBoolean("100%time_emergency",false).apply();
         sharedPreferences.edit().putBoolean("alarmComplete",false).apply();
+
     }
 }

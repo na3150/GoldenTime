@@ -79,7 +79,6 @@ public class Emergency_getFall extends AppCompatActivity {
         notEmergency.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isAlarm = false; //false로 변경
                 View dialogView = getLayoutInflater().inflate(R.layout.alertdialog, null);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
@@ -93,7 +92,6 @@ public class Emergency_getFall extends AppCompatActivity {
                 ok_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        isAlarm = false;
                         Toast.makeText(getApplicationContext(), "응급상황이 아닌것으로 확인되었습니다.", Toast.LENGTH_SHORT).show();
                         alertDialog.dismiss();
                         Intent safeIntent = new Intent(Emergency_getFall.this, NotEmergencyActivity.class);
