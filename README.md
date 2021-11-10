@@ -27,6 +27,12 @@
 
 ![image](https://user-images.githubusercontent.com/64996121/140453608-41c5c4e3-5fb4-40e4-865d-cba8bcd18120.png) ![image](https://user-images.githubusercontent.com/64996121/140453624-705b6e9b-5ee7-4bed-a31f-1937cd92860d.png)
 
+● 화장실 응급시간 50%, 100% 초과
+
+![image](https://user-images.githubusercontent.com/64996121/141114584-8aca2761-e694-470a-9031-46cc6c9a6a58.png) 
+![image](https://user-images.githubusercontent.com/64996121/141114637-f86ed363-8775-4e9c-ac2e-6424190d56ac.png)
+
+
 ● 응급신고 완료
 
 ![image](https://user-images.githubusercontent.com/64996121/140453704-93f76e03-99a8-4e7f-8254-54e6c64b6501.png)
