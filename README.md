@@ -3,15 +3,19 @@
 
 [서비스 구성도]
 
+
 ![image](https://user-images.githubusercontent.com/64996121/140453128-42ecbb05-2a2d-4f9b-b931-cbd45e141552.png)
 
 [플로우 차트]
 
 
+
 ![image](https://user-images.githubusercontent.com/64996121/140453207-8dd3c9f2-8fac-4c4a-9348-6b3f2b3b7c18.png)
 
 
+
 [어플리케이션 주요화면] 📱
+
 
 ● 첫 화면
 
