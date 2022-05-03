@@ -11,7 +11,7 @@ def lambda_handler(event, context):
 
     client = boto3.client('sns')
     response = client.publish(
-        TargetArn="arn:aws:sns:ap-northeast-2:128496275986:push_notification",
+        TargetArn="[ARN]",
         Message=json.dumps({'default': notification}),
         MessageStructure='json'
     )
