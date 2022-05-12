@@ -10,7 +10,7 @@ def lambda_handler(event, context):
         \"title\":\"[안전바 응급 호출 도우미]\",
         \"click_action\":\"Push_emergency_button\",
         \"time\":\"0\"} 
-    }"
+         }"
     }
 
     client = boto3.client('sns')
