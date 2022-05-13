@@ -6,11 +6,11 @@
 
 KIPS 논문 게재 - KIPS_C2021B0098
 ```
-<br>
+
 
 #### ✔️ Outputs
 - 결과보고서 : 업로드예정
-- [발표 PPT](https://github.com/na3150/GoldenTime/blob/probonoApp/GolenTime%20%EB%B0%9C%ED%91%9C%20ppt.pdf)
+- [발표 PPT](https://github.com/na3150/GoldenTime/blob/probonoApp/GolenTime(3%EC%B0%A8%20ppt%EC%B5%9C%EC%A2%85).pdf)
 
 <br>
 
