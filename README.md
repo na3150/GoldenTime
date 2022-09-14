@@ -1,33 +1,24 @@
-# GoldenTime
-```
-「노약자의 응급상황 대응을 위한 안전바 및 응급호출시스템」
+# 노약자의 응급상황 대응을 위한 안전바 및 응급호출시스템
 
 2021 프로보노 공모전 동상🏅 수상 - 한국방송통신대연합회장상 수상
 
 KIPS 논문 게재 - KIPS_C2021B0098
-```
 
 
-#### ✔️ Outputs
+## Outputs
 - 결과보고서 : 업로드예정
 - [발표 PPT](https://github.com/na3150/GoldenTime/blob/probonoApp/GolenTime(3%EC%B0%A8%20ppt%EC%B5%9C%EC%A2%85).pdf)
 
 <br>
 
-#### ✔️ 서비스 구성도
+## 서비스 구성도
 <br>
 
 ![image](https://user-images.githubusercontent.com/64996121/140453128-42ecbb05-2a2d-4f9b-b931-cbd45e141552.png)
 
-#### ✔️ 플로우 차트
 <br>
 
-
-![image](https://user-images.githubusercontent.com/64996121/140453207-8dd3c9f2-8fac-4c4a-9348-6b3f2b3b7c18.png)
-
-
-
-#### ✔️ 애플리케이션 주요 인터페이스 📱
+## 애플리케이션 주요 인터페이스 
 <br>
 
 ● 로딩 화면
