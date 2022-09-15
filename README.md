@@ -24,13 +24,6 @@ Smart safety bar using machine learning image processing and human body detectio
 
 <br>
 
-## Service Architecture
-<br>
-
-![image](https://user-images.githubusercontent.com/64996121/140453128-42ecbb05-2a2d-4f9b-b931-cbd45e141552.png)
-
-<br>
-
 ## Screenshot 
 <br>
 
