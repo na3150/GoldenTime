@@ -1,6 +1,6 @@
 # GoldenTime
 
-2021 프로보노 공모전 동상🏅 수상 - 한국방송통신대연합회장상 수상
+2021 Probono Competition🏅 Bronze Prize 
 
 KIPS thesis publication - `KIPS_C2021B0098`
 
