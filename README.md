@@ -7,7 +7,7 @@ KIPS thesis publication - `KIPS_C2021B0098`
 <br>
 
 ## Introduction
-Smart safety bar using machine learning image processing and human body detection sensor to prevent falls accidents of the elderly
+Smart safety bar and emergency call system using machine learning image processing and human body detection sensor to prevent falls accidents of the elderly
 - Improving the use environment of the elderly by providing safety bars in the main movement areas such as toilets
 - Automatic emergency call in case of a fall through motion recognition using image processing
 - Detect emergency situations such as fainting through time spent using the toilet
