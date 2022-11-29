@@ -24,6 +24,14 @@ A smart safety bar and emergency call system that uses machine learning image pr
 
 <br>
 
+## System Architecture
+
+<img src="https://user-images.githubusercontent.com/64996121/204437039-67243b6e-9ab0-4a43-8591-c9302703f169.png" width=500/>
+
+<br>
+
+<br>
+
 ## Screenshot 
 <br>
 
